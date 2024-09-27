@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #28A745;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
