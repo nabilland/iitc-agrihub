@@ -28,6 +28,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <!-- Slick CSS -->
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/fonts.css" />
@@ -72,7 +83,7 @@
     <!-- Hero -->
     <section class="text-center py-5 hero">
       <div class="container">
-        <h1 class="title open-sans-semibold" id="typed-output"></h1>
+        <h1 class="title poppins-bold mt-5" id="typed-output"></h1>
         <h5 class="mt-3">Tingkatkan Pertanianmu dengan Teknologi Cerdas</h5>
         <a
           href="dashboard.html"
@@ -84,26 +95,28 @@
     </section>
 
     <!-- Quick Stats -->
-    <div class="quick-stats">
-      <div class="quick-stats-row">
-        <h1>100+</h1>
-        <p>Petani Terbantu</p>
+    <section>
+      <div class="quick-stats">
+        <div class="quick-stats-row">
+          <h1>100+</h1>
+          <p>Petani Terbantu</p>
+        </div>
+        <div class="quick-stats-row">
+          <h1>5000+</h1>
+          <p>Tanaman Dipantau</p>
+        </div>
+        <div class="quick-stats-row">
+          <h1>20+</h1>
+          <p>Sensor IoT Diterapkan</p>
+        </div>
       </div>
-      <div class="quick-stats-row">
-        <h1>5000+</h1>
-        <p>Tanaman Dipantau</p>
-      </div>
-      <div class="quick-stats-row">
-        <h1>20+</h1>
-        <p>Sensor IoT Diterapkan</p>
-      </div>
-    </div>
+    </section>
 
     <!-- Key Features -->
     <section class="key-features">
       <div class="container mt-5">
         <div class="row">
-          <h1 class="title mb-4">Fitur Utama</h1>
+          <h1 class="poppins-bold title mt-5 mb-4">Fitur Utama</h1>
         </div>
 
         <div class="row">
@@ -116,7 +129,7 @@
                 <div class="icons">
                   <img src="images/icon-rice.png" width="60px" class="my-3" />
                 </div>
-                <h5 class="card-title">Forecasting dan Prediksi Hasil Tanam</h5>
+                <h5 class="poppins-bold card-title">Forecasting dan Prediksi Hasil Tanam</h5>
                 <p class="card-text">
                   Dapatkan prediksi hasil panen berdasarkan data cuaca, lahan,
                   dan pola tanam untuk perencanaan yang lebih matang.
@@ -138,7 +151,7 @@
                     class="my-3"
                   />
                 </div>
-                <h5 class="card-title">Komunitas & Panduan Tanaman</h5>
+                <h5 class="poppins-bold card-title">Komunitas & Panduan Tanaman</h5>
                 <p class="card-text">
                   Terhubung dengan petani lain dan akses panduan lengkap tentang
                   penanaman berbagai jenis tanaman.
@@ -156,7 +169,7 @@
                 <div class="icons">
                   <img src="images/icon-map.png" width="90px" class="my-3" />
                 </div>
-                <h5 class="card-title">Peta Distribusi Tanaman Interaktif</h5>
+                <h5 class="poppins-bold card-title">Peta Distribusi Tanaman Interaktif</h5>
                 <p class="card-text">
                   Visualisasikan lahan pertanian Anda dengan peta interaktif
                   untuk memahami kondisi lahan dan distribusi tanaman.
@@ -178,7 +191,7 @@
                     class="my-3"
                   />
                 </div>
-                <h5 class="card-title">Dashboard Monitoring Tanaman</h5>
+                <h5 class="poppins-bold card-title">Dashboard Monitoring Tanaman</h5>
                 <p class="card-text">
                   Pantau perkembangan tanaman secara real-time dengan data
                   lengkap seperti suhu, kelembaban, dan faktor lainnya.
@@ -196,7 +209,7 @@
                 <div class="icons">
                   <img src="images/icon-notify.png" width="55px" class="my-3" />
                 </div>
-                <h5 class="card-title">Peringatan dan Notifikasi</h5>
+                <h5 class="poppins-bold card-title">Peringatan dan Notifikasi</h5>
                 <p class="card-text">
                   Dapatkan notifikasi penting terkait kondisi tanaman, prediksi
                   cuaca, atau tindakan yang perlu diambil.
@@ -218,7 +231,7 @@
                     class="my-3"
                   />
                 </div>
-                <h5 class="card-title">Manajemen Sumber Daya Pertanian</h5>
+                <h5 class="poppins-bold card-title">Manajemen Sumber Daya Pertanian</h5>
                 <p class="card-text">
                   Optimalkan penggunaan air, pupuk, dan sumber daya lainnya
                   dengan sistem otomatis yang cerdas.
@@ -236,7 +249,7 @@
                 <div class="icons">
                   <img src="images/icon-plant.png" width="65px" class="my-3" />
                 </div>
-                <h5 class="card-title">Sistem Rekomendasi Penanaman</h5>
+                <h5 class="poppins-bold card-title">Sistem Rekomendasi Penanaman</h5>
                 <p class="card-text">
                   Dapatkan rekomendasi tanaman yang paling cocok berdasarkan
                   jenis lahan, cuaca, dan kondisi tanah.
@@ -249,30 +262,35 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works mt-5">
+    <section class="how-it-works mt-5 py-5" style="background: linear-gradient(135deg, #e0f7da 0%, #f1f8e9 100%); border-radius: 15px;">
       <div class="container">
-        <div class="row">
-          <h1 class="text-center">Cara Kerja</h1>
-        </div>
-        <div class="d-flex flex-row align-items-start mt-4">
-          <span class="material-symbols-outlined"> counter_1 </span>
-          <div class="d-flex flex-column mb-0 px-3">
-            <h5 class="mb-0 poppins-bold">Pasang Sensor</h5>
-            <p class="mb-0 ">Petani memasang sensor di ladang untuk memantau kelembaban tanah, suhu, dan kondisi lingkungan lainnya secara real-time.</p>
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <img src="images/smart-agri.jpg" class="img-fluid rounded" alt="Smart Agriculture">
           </div>
-        </div>
-        <div class="d-flex flex-row align-items-start mt-3">
-          <span class="material-symbols-outlined"> counter_2 </span>
-          <div class="d-flex flex-column mb-0 px-3">
-            <h5 class="mb-0 poppins-bold">Monitor Data</h5>
-            <p class="mb-0 ">Semua data terkumpul secara real-time dan ditampilkan di dashboard yang mudah dipahami oleh petani untuk monitoring.</p>
-          </div>
-        </div>
-        <div class="d-flex flex-row align-items-start mt-3">
-          <span class="material-symbols-outlined"> counter_3 </span>
-          <div class="d-flex flex-column mb-0 px-3">
-            <h5 class="mb-0 poppins-bold">Ambil Keputusan</h5>
-            <p class="mb-0 ">Petani mendapatkan rekomendasi berbasis data untuk menentukan waktu penyiraman, pemupukan, atau tindakan lainnya.</p>
+          <div class="col-md-8">
+            <h1 class="mt-4 mb-2 ms-3 title poppins-bold">Cara Kerja</h1>
+            <div class="d-flex flex-row align-items-start mt-4 ms-4">
+              <span class="material-symbols-outlined"> counter_1 </span>
+              <div class="d-flex flex-column mb-0 px-3">
+                <h5 class="mb-0 poppins-bold" style="font-size: 1.5rem;">Pasang Sensor</h5>
+                <p class="mb-0">Petani memasang sensor di ladang untuk memantau kelembaban tanah, suhu, dan kondisi lingkungan lainnya secara real-time.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-start mt-3 ms-4">
+              <span class="material-symbols-outlined"> counter_2 </span>
+              <div class="d-flex flex-column mb-0 px-3">
+                <h5 class="mb-0 poppins-bold" style="font-size: 1.5rem;">Monitor Data</h5>
+                <p class="mb-0">Semua data terkumpul secara real-time dan ditampilkan di dashboard yang mudah dipahami oleh petani untuk monitoring.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-row align-items-start my-3 ms-4">
+              <span class="material-symbols-outlined"> counter_3 </span>
+              <div class="d-flex flex-column mb-0 px-3">
+                <h5 class="mb-0 poppins-bold" style="font-size: 1.5rem;">Ambil Keputusan</h5>
+                <p class="mb-0">Petani mendapatkan rekomendasi berbasis data untuk menentukan waktu penyiraman, pemupukan, atau tindakan lainnya.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -282,49 +300,162 @@
     <section class="testimonial mt-5 p-5">
       <div class="container">
         <div class="row">
-          <h1 class="title mt-5 mb-4">Para Petani Sukses</h1>
+          <h1 class="poppins-bold title mb-4">Para Petani Sukses</h1>
         </div>
         <div class="row text-center">
-          <!-- Testimonial 1 -->
           <div class="col-md-4">
             <div class="card shadow-sm mb-4 p-4">
               <img src="images/farmer-1.png" alt="Petani Sukses 1" class="img-fluid rounded-circle align-self-center mb-3" width="120" height="120" loading="lazy">
               <blockquote>
                 <p>"Platform ini benar-benar membantu saya memantau kondisi lahan dan meningkatkan produktivitas panen saya!"</p>
               </blockquote>
-              <h5>- Budi, Petani Padi</h5>
+              <h5 class="card-title">- Budi, Petani Padi</h5>
             </div>
           </div>
-
-          <!-- Testimonial 2 -->
           <div class="col-md-4">
             <div class="card shadow-sm mb-4 p-4">
               <img src="images/farmer-2.png" alt="Petani Sukses 2" class="img-fluid rounded-circle align-self-center mb-3" width="120" height="120" loading="lazy">
               <blockquote>
                 <p>"Sistem irigasi otomatis sangat membantu dalam pengelolaan air, membuat hasil panen saya lebih efisien."</p>
               </blockquote>
-              <h5>- Siti, Petani Sayuran</h5>
+              <h5 class="card-title">- Siti, Petani Sayuran</h5>
             </div>
           </div>
-
-          <!-- Testimonial 3 -->
           <div class="col-md-4">
             <div class="card shadow-sm mb-4 p-4">
               <img src="images/farmer-3.png" alt="Petani Sukses 3" class="img-fluid rounded-circle align-self-center mb-3" width="120" height="120" loading="lazy">
               <blockquote>
                 <p>"Rekomendasi berbasis data membantu saya dalam menentukan waktu terbaik untuk menanam dan memanen."</p>
               </blockquote>
-              <h5>- Agus, Petani Jagung</h5>
+              <h5 class="card-title">- Agus, Petani Jagung</h5>
             </div>
           </div>
       </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta mt-5">
+      <div class="container">
+        <div class="row">
+          <h1 class="text-center poppins-bold mt-5 mb-3">Uji Coba Sekarang!</h1>
+          <p class="text-center">
+            Siap meningkatkan hasil pertanian Anda dengan teknologi terbaru? <br>
+            Daftarkan diri Anda sekarang dan mulai perjalanan menuju pertanian yang lebih cerdas!
+          </p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a
+            href="dashboard.html"
+            class="btn btn-outline-light rounded-pill btn-lg mt-3 px-4"
+          >
+            Buat Akun
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Partners -->
+    <section class="partners mt-5 p-5">
+      <div class="container">
+        <div class="row">
+          <h1 class="poppins-bold title text-center mt-5 mb-4">Partner Kami</h1>
+        </div>
+        <div class="partner-slider">
+          <div>
+            <img src="images/partner-1.png" alt="Partner 1" class="img-fluid" />
+          </div>
+          <div>
+            <img src="images/partner-2.png" alt="Partner 2" class="img-fluid" />
+          </div>
+          <div>
+            <img src="images/partner-3.png" alt="Partner 3" class="img-fluid" />
+          </div>
+          <div>
+            <img src="images/partner-4.png" alt="Partner 4" class="img-fluid" />
+          </div>
+          <div>
+            <img src="images/partner-5.png" alt="Partner 3" class="img-fluid" />
+          </div>
+          <div>
+            <img src="images/partner-6.png" alt="Partner 4" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QnA -->
+    <section class="qna mt-1 p-5">
+      <div class="container">
+        <div class="row">
+          <h1 class="poppins-bold text-center mt-1 mb-4">Pertanyaan Paling Sering Diajukan</h1>
+        </div>
+        <div class="row qna-block-1 mt-3">
+            <h5 class="mt-3 poppins-bold">Apakah saya membutuhkan sensor khusus?</h5>
+            <p>Ya, platform ini bekerja dengan berbagai jenis sensor tanah dan cuaca yang tersedia di pasaran.</p>
+        </div>
+        <div class="row qna-block-2 mt-3">
+            <h5 class="mt-3 poppins-bold">Berapa biaya langganan platform ini?</h5>
+            <p>Kami menawarkan beberapa paket langganan yang fleksibel, termasuk uji coba gratis selama 30 hari.</p>
+        </div>
+        <div class="row qna-block-3 mt-3">
+          <h5 class="mt-3 poppins-bold">Apakah saya bisa menggunakan platform ini tanpa internet?</h5>
+          <p>Beberapa fitur dapat diakses secara offline, tetapi untuk data real-time, koneksi internet diperlukan.</p>
+        </div>
+        <div class="row qna-block-4 mt-3">
+          <h5 class="mt-3 poppins-bold">Apakah data saya aman?</h5>
+          <p>Ya, kami menggunakan enkripsi dan protokol keamanan untuk memastikan data Anda tetap aman.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-3">
-      &copy; 2024 <b>AgriHub</b>. All rights reserved.
+    <footer>
+      <div class="container">
+        <div class="row mt-5">
+          <!-- Kontak -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>Kontak</h4>
+            <ul style="list-style-type: none; padding: 0;">
+              <li>Alamat: Jl. Pertanian No. 123, Jakarta</li>
+              <li>Telepon: (021) 123-4567</li>
+              <li>Email: info@smartagri.com</li>
+            </ul>
+          </div>
+
+          <!-- Sosial Media -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h4>Sosial Media</h4>
+            <ul style="list-style-type: none; padding: 0;">
+              <li><a href="#" style="color: black; text-decoration: none;">Facebook</a></li>
+              <li><a href="#" style="color: black; text-decoration: none;">Instagram</a></li>
+              <li><a href="#" style="color: black; text-decoration: none;">Twitter</a></li>
+              <li><a href="#" style="color: black; text-decoration: none;">LinkedIn</a></li>
+            </ul>
+          </div>
+
+          <!-- Daftar Buletin -->
+          <div class="col-lg-4 col-md-12">
+            <h4>Daftar Buletin</h4>
+            <form action="#">
+              <input type="email" placeholder="Masukkan email Anda" style="padding: 8px; width: 80%; border: none; margin-bottom: 10px;">
+              <a
+                href="dashboard.html"
+                class="btn btn-dark btn-sm px-4 py-2"
+              >
+                Buat Akun
+              </a>
+            </form>
+          </div>
+
+          <div class="text-center">
+            &copy; 2024 <b>AgriHub</b>. All rights reserved.
+          </div>
+        </div>
+      </div>
     </footer>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Bootstrap JS and dependencies -->
     <script
@@ -341,7 +472,7 @@
         typeSpeed: 75,
         backSpeed: 25,
         loop: true,
-        showCursor: false,
+        showCursor: true,
       });
     </script>
 
@@ -354,6 +485,50 @@
         } else {
           navbar.classList.remove("scrolled");
         }
+      });
+    </script>
+
+    <!-- Slick JS -->
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <!-- Carousel Animation -->
+    <script>
+      $(document).ready(function () {
+        $(".partner-slider").slick({
+          slidesToShow: 4, // Jumlah logo yang ingin ditampilkan sekaligus
+          slidesToScroll: 1,
+          autoplay: true, // Geser otomatis
+          autoplaySpeed: 2000, // Kecepatan geser (ms)
+          arrows: false, // Hilangkan panah navigasi
+          dots: false, // Hilangkan indikator titik
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
       });
     </script>
   </body>

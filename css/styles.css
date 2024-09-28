@@ -18,9 +18,9 @@ body {
     padding: 20px;
 }
 
-.footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
+footer {
+    background-color: #d6e3ed;
+    padding: 40px 0;
     position: relative;
     bottom: 0;
     left: 0; /* Menetapkan posisi kiri */
@@ -119,28 +119,87 @@ body {
 }
 
 .how-it-works {
-    background-color: #c7eeaf;
+    background-color: #bae59d;
     position: relative;
     padding: 60px 20px;
 }
 
-.how-it-works::after {
+.cta {
+    background-color: #198754;
+    color: white;
+    position: relative;
+    padding: 60px 20px;
+}
+
+.cta::after {
     content: '';
     position: absolute;
     bottom: -100px;
     left: 0;
     right: 0;
-    height: 150px;
-    background-color: #c7eeaf;
+    height: 120px;
+    background-color: #198754;
     border-radius: 0 0 100% 100%;
 }
 
+#typed-output {
+    font-size: 3rem;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
 
+.typed-cursor {
+    font-size: 3rem;
+    position: relative;
+    top: -2px;
+    vertical-align: baseline;
+}
 
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 1,
     'wght' 1000,
     'GRAD' 0,
-    'opsz' 100
+    'opsz' 100,
+}
+
+.material-symbols-outlined {
+    font-size: 3rem;
+    color: #198754;
+}
+
+.partner-slider img {
+    max-width: 60%;
+    height: auto;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.qna-block-1 {
+    background-color: #70d030;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.qna-block-2 {
+    background-color: #07b68b;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.qna-block-3 {
+    background-color: #45c1d3;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.qna-block-4 {
+    background-color: #2daccd;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
 }
