@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Sumber Daya</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Manajemen Sumber Daya</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="map.html">Peta Lahan</a>
+            <a href="recommendation.html">Rekomendasi Tanaman</a>
+            <a href="resources.html" class="active">Manajemen Sumber Daya</a>
+        </nav>
+    </header>
+    <main>
+        <section class="resources">
+            <h2>Status Sumber Daya Pertanian</h2>
+            <div class="chart-container">
+                <canvas id="resourceChart" width="400" height="200"></canvas>
+            </div>
+            <p>Grafik di bawah ini menunjukkan ketersediaan air, pupuk, dan peralatan dalam satuan kuantitas:</p>
+        </section>
+    </main>
+    <script>
+        var ctx = document.getElementById('resourceChart').getContext('2d');
+        var resourceChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Air', 'Pupuk', 'Peralatan'],
+                datasets: [{
+                    label: 'Ketersediaan',
+                    data: [65, 35, 20],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.raw + ' unit';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Smart Agriculture. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

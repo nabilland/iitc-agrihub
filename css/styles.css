@@ -1,11 +1,17 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    padding-top: 80px;
 }
 
 .navbar {
     padding: 20px;
     background-color: #d6e3ed;
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
 }
+
 
 h1, h2 {
     color: #198754;
