@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rekomendasi Tanaman - Smart Agriculture</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <img src="images/logo.png" id="logo" alt="Logo" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link active" href="recommendation.html">Rekomendasi Tanaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html">Manajemen Sumber Daya</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Rekomendasi Tanaman</h2>
+    <p class="text-center mb-5">Dapatkan rekomendasi tanaman berdasarkan kondisi lingkungan Anda untuk hasil pertanian optimal.</p>
+    <div class="row">
+      <!-- Plant Recommendation Form -->
+      <div class="col-md-6 offset-md-3">
+        <form id="recommendationForm" class="fade-in">
+          <div class="mb-3">
+            <label for="location" class="form-label">Lokasi Anda</label>
+            <input type="text" class="form-control" id="location" placeholder="Masukkan kota atau wilayah Anda" />
+          </div>
+          <div class="mb-3">
+            <label for="soilType" class="form-label">Jenis Tanah</label>
+            <select class="form-select" id="soilType">
+              <option>Pilih jenis tanah</option>
+              <option>Tanah Liat</option>
+              <option>Tanah Pasir</option>
+              <option>Tanah Berhumus</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="humidity" class="form-label">Kelembaban (%)</label>
+            <input type="number" class="form-control" id="humidity" placeholder="Masukkan kelembaban tanah" />
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-success" id="getRecommendation">Dapatkan Rekomendasi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Recommendation Result -->
+    <div class="row mt-5" id="resultSection" style="display: none;">
+      <div class="col-md-6 offset-md-3">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Hasil Rekomendasi</h4>
+          <p id="recommendationText">Tanaman yang cocok untuk kondisi ini adalah: </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3 mt-5">
+    &copy; 2024 Smart Agriculture. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    // Fade-in effect for the form
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.fade-in').style.opacity = 0;
+      document.querySelector('.fade-in').style.transition = "opacity 1s";
+      document.querySelector('.fade-in').style.opacity = 1;
+    });
+
+    document.getElementById('getRecommendation').addEventListener('click', function() {
+      // Get form values
+      const location = document.getElementById('location').value;
+      const soilType = document.getElementById('soilType').value;
+      const humidity = document.getElementById('humidity').value;
+
+      // Simple validation (check if all fields are filled)
+      if (location && soilType !== 'Pilih jenis tanah' && humidity) {
+        // Display the result section
+        document.getElementById('resultSection').style.display = 'block';
+
+        // Generate a simple recommendation message
+        const recommendedPlant = getRecommendedPlant(soilType, humidity);
+        document.getElementById('recommendationText').innerText = `Tanaman yang cocok untuk wilayah ${location} dengan tanah jenis ${soilType} dan kelembaban ${humidity}% adalah: ${recommendedPlant}.`;
+      } else {
+        alert('Mohon lengkapi semua field sebelum mendapatkan rekomendasi.');
+      }
+    });
+
+    // Function to generate recommendation based on soil type and humidity
+    function getRecommendedPlant(soilType, humidity) {
+      if (soilType === 'Tanah Liat') {
+        return humidity >= 50 ? 'Padi' : 'Kedelai';
+      } else if (soilType === 'Tanah Pasir') {
+        return humidity >= 40 ? 'Jagung' : 'Ubi Jalar';
+      } else if (soilType === 'Tanah Berhumus') {
+        return humidity >= 60 ? 'Kentang' : 'Wortel';
+      } else {
+        return 'Tanaman Tidak Diketahui';
+      }
+    }
+  </script>
+</body>
+</html>
