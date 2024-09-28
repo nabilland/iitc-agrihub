@@ -1,75 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Sumber Daya</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manajemen Sumber Daya - Smart Agriculture</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Manajemen Sumber Daya</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="map.html">Peta Lahan</a>
-            <a href="recommendation.html">Rekomendasi Tanaman</a>
-            <a href="resources.html" class="active">Manajemen Sumber Daya</a>
-        </nav>
-    </header>
-    <main>
-        <section class="resources">
-            <h2>Status Sumber Daya Pertanian</h2>
-            <div class="chart-container">
-                <canvas id="resourceChart" width="400" height="200"></canvas>
-            </div>
-            <p>Grafik di bawah ini menunjukkan ketersediaan air, pupuk, dan peralatan dalam satuan kuantitas:</p>
-        </section>
-    </main>
-    <script>
-        var ctx = document.getElementById('resourceChart').getContext('2d');
-        var resourceChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Air', 'Pupuk', 'Peralatan'],
-                datasets: [{
-                    label: 'Ketersediaan',
-                    data: [65, 35, 20],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
-                                label += context.raw + ' unit';
-                                return label;
-                            }
-                        }
-                    }
-                }
-            }
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <img src="images/logo.png" id="logo" alt="Logo" />
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="plant-guide.html">Plant Guide</a></li>
+          <li class="nav-item"><a class="nav-link active" href="resource-management.html">Manajemen Sumber Daya</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Resource Management Content -->
+  <div class="container mt-5 pt-5">
+    <h2 class="text-success text-center">Manajemen Sumber Daya</h2>
+    <p class="text-center">Pilih metode pengaturan sumber daya untuk pertanian Anda:</p>
+
+    <!-- Selection Buttons -->
+    <div class="d-flex justify-content-center">
+      <button id="manualBtn" class="btn btn-outline-primary m-2">Input Manual</button>
+      <button id="iotBtn" class="btn btn-outline-success m-2">Integrasi dengan IoT</button>
+    </div>
+
+    <!-- Success Message for Notification -->
+    <!-- Notification Alert (Initially Hidden) -->
+    <div id="alertNotification" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+        Notifikasi berhasil disetel pada <span id="alertTime"></span>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  
+    <!-- Manual Input Form (Initially Hidden) -->
+    <div id="manualForm" class="mt-4" style="display: none;">
+      <h4>Input Manual</h4>
+      <form>
+        <div class="mb-3">
+          <label for="waterUsage" class="form-label">Penggunaan Air (Liter)</label>
+          <input type="number" class="form-control" id="waterUsage" placeholder="Contoh: 500" required />
+        </div>
+        <div class="mb-3">
+          <label for="fertilizerUsage" class="form-label">Penggunaan Pupuk (Kg)</label>
+          <input type="number" class="form-control" id="fertilizerUsage" placeholder="Contoh: 50" required />
+        </div>
+        <div class="mb-3">
+          <label for="energyUsage" class="form-label">Penggunaan Energi (KWh)</label>
+          <input type="number" class="form-control" id="energyUsage" placeholder="Contoh: 30" required />
+        </div>
+        <button type="button" id="saveBtn" class="btn btn-success">Simpan Data</button>
+      </form>
+
+      <!-- Manual Data Result (Initially Hidden) -->
+      <div id="manualResult" class="mt-4" style="display: none;">
+        <h5 class="text-info">Hasil Input Manual:</h5>
+        <ul class="list-group">
+          <li class="list-group-item">Penggunaan Air: <span id="waterData"></span> Liter</li>
+          <li class="list-group-item">Penggunaan Pupuk: <span id="fertilizerData"></span> Kg</li>
+          <li class="list-group-item">Penggunaan Energi: <span id="energyData"></span> KWh</li>
+        </ul>
+      </div>
+
+      <!-- Button Setel Notifikasi -->
+      <button id="setNotificationManual" class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#notificationModal">Setel Notifikasi</button>
+    </div>
+
+    <!-- IoT Data Result (Initially Hidden) -->
+    <div id="iotResult" class="mt-4" style="display: none;">
+      <h4 class="text-success">Hasil Integrasi dengan IoT</h4>
+      <p>Berikut adalah data penggunaan sumber daya yang didapatkan dari sensor IoT:</p>
+      <ul class="list-group">
+        <li class="list-group-item">Penggunaan Air: 600 Liter</li>
+        <li class="list-group-item">Penggunaan Pupuk: 55 Kg</li>
+        <li class="list-group-item">Penggunaan Energi: 35 KWh</li>
+      </ul>
+      <button id="setNotificationIoT" class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#notificationModal">Setel Notifikasi</button>
+    </div>
+
+    <!-- Modal for Setting Notification -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="notificationModalLabel">Atur Notifikasi Waktu Penggunaan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="notificationTime">Jam Notifikasi:</label>
+            <input type="time" id="notificationTime" class="form-control" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="setNotification">Setel Notifikasi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal untuk Notifikasi Penggunaan Sumber Daya -->
+<div class="modal fade" id="resourceNotificationModal" tabindex="-1" aria-labelledby="resourceNotificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resourceNotificationModalLabel">Notifikasi Penggunaan Sumber Daya</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Waktunya menggunakan sumber daya!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3 mt-5">
+    &copy; 2024 Smart Agriculture. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- jQuery Script for Effects and Data Handling -->
+  <script>
+    $(document).ready(function () {
+      $('#manualBtn').click(function () {
+        $('#iotResult').fadeOut();
+        $('#manualForm').fadeIn();
+      });
+
+      $('#iotBtn').click(function () {
+        $('#manualForm').fadeOut();
+        $('#iotResult').fadeIn();
+      });
+
+      $('#saveBtn').click(function () {
+        const water = $('#waterUsage').val();
+        const fertilizer = $('#fertilizerUsage').val();
+        const energy = $('#energyUsage').val();
+        $('#waterData').text(water);
+        $('#fertilizerData').text(fertilizer);
+        $('#energyData').text(energy);
+        $('#manualResult').fadeIn();
+      });
+
+      $('#setNotification').click(function () {
+        const time = $('#notificationTime').val();
+        const now = new Date();
+        const notificationTime = new Date();
+        notificationTime.setHours(time.split(':')[0]);
+        notificationTime.setMinutes(time.split(':')[1]);
+        notificationTime.setSeconds(0);
+
+        const timeout = notificationTime.getTime() - now.getTime();
+
+        if (timeout > 0) {
+            setTimeout(() => {
+            $('#resourceNotificationModal').modal('show'); // Tampilkan modal notifikasi
+            }, timeout);
+            setTimeout(function () {
+                $('#alertNotification').fadeOut();
+            }, 10000); // Menghilangkan alert setelah 3 detik
+
+            $('#notificationModal').modal('hide'); // Tutup modal setelah mengatur notifikasi
+            $('#alertTime').text(notificationTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })); // Set waktu pada alert
+            $('#alertNotification').fadeIn(); // Tampilkan alert sukses
+        } else {
+            alert('Waktu sudah lewat, silakan atur waktu yang benar.');
+        }
         });
-    </script>
-    <footer>
-        <p>&copy; 2024 Smart Agriculture. All Rights Reserved.</p>
-    </footer>
+
+
+      // Show the modal for setting notification for manual input
+      $('#setNotificationManual').click(function () {
+        $('#notificationModal').modal('show');
+        $('#notification').hide(); // Hide the success message initially
+      });
+
+      // Show the modal for setting notification for IoT input
+      $('#setNotificationIoT').click(function () {
+        $('#notificationModal').modal('show');
+        $('#notification').hide(); // Hide the success message initially
+      });
+    });
+  </script>
 </body>
 </html>

@@ -36,7 +36,7 @@
     <div class="row">
       <!-- Plant Recommendation Form -->
       <div class="col-md-6 offset-md-3">
-        <form id="recommendationForm">
+        <form id="recommendationForm" class="fade-in">
           <div class="mb-3">
             <label for="location" class="form-label">Lokasi Anda</label>
             <input type="text" class="form-control" id="location" placeholder="Masukkan kota atau wilayah Anda" />
@@ -73,7 +73,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-light text-center py-3 mt-5">
+  <footer class="footer text-center py-3 mt-5">
     &copy; 2024 Smart Agriculture. All rights reserved.
   </footer>
 
@@ -81,6 +81,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JavaScript -->
   <script>
+    // Fade-in effect for the form
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.fade-in').style.opacity = 0;
+      document.querySelector('.fade-in').style.transition = "opacity 1s";
+      document.querySelector('.fade-in').style.opacity = 1;
+    });
+
     document.getElementById('getRecommendation').addEventListener('click', function() {
       // Get form values
       const location = document.getElementById('location').value;
