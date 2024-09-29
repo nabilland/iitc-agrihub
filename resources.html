@@ -121,22 +121,24 @@
   <!-- Modal for Setting Notification -->
   <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="notificationModalLabel">Atur Notifikasi Waktu Penggunaan</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Atur Notifikasi Waktu Penggunaan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="alertContainer"></div> <!-- Tempat untuk alert -->
+                <label for="notificationTime">Jam Notifikasi:</label>
+                <input type="time" id="notificationTime" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="setNotification">Setel Notifikasi</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <label for="notificationTime">Jam Notifikasi:</label>
-          <input type="time" id="notificationTime" class="form-control" required>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="setNotification">Setel Notifikasi</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
+
+
 
 <!-- Modal untuk Notifikasi Penggunaan Sumber Daya -->
 <div class="modal fade" id="resourceNotificationModal" tabindex="-1" aria-labelledby="resourceNotificationModalLabel" aria-hidden="true">
@@ -173,6 +175,7 @@
     </div>
   </div>
 </div>
+
   
   <!-- Footer -->
   <footer id="footer-resources" class="footer text-center py-3">
@@ -232,9 +235,16 @@
           $('#notificationModal').modal('hide'); // Tutup modal setelah mengatur notifikasi
           $('#alertTime').text(notificationTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })); // Set waktu pada alert
           $('#alertNotification').fadeIn(); // Tampilkan alert sukses
-        } else {
-          alert('Waktu sudah lewat, silakan atur waktu yang benar.');
-        }
+        }  else {
+        // Menampilkan alert jika waktu sudah lewat
+        $('#alertContainer').append(`
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Waktu sudah lewat!</strong> Silakan atur waktu yang benar.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+            </div>
+        `);
+    }
       });
   
       // Show the modal for setting notification for manual input
