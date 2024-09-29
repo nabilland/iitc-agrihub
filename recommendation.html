@@ -139,11 +139,26 @@
           <div class="alert alert-success hidden" id="resultSection" role="alert">
             <h4 class="alert-heading"><strong>Hasil Rekomendasi</strong></h4>
             <p id="recommendationText">Tanaman yang cocok untuk kondisi ini adalah: </p>
+
+            <!-- Supporting Table -->
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Faktor</th>
+                  <th>Kondisi Optimal</th>
+                  <th>Keterangan</th>
+                </tr>
+              </thead>
+              <tbody id="supportingData">
+                <!-- Tabel ini akan diisi oleh script JavaScript -->
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 
   <!-- Modal for validation message -->
   <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
@@ -172,42 +187,61 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JavaScript -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelector('.fade-in').style.opacity = 0;
-      document.querySelector('.fade-in').style.transition = "opacity 1s";
-      document.querySelector('.fade-in').style.opacity = 1;
-    });
-
     document.getElementById('getRecommendation').addEventListener('click', function() {
-      const location = document.getElementById('location').value;
-      const soilType = document.getElementById('soilType').value;
-      const humidity = document.getElementById('humidity').value;
+  const location = document.getElementById('location').value;
+  const soilType = document.getElementById('soilType').value;
+  const humidity = document.getElementById('humidity').value;
 
-      if (location && soilType !== 'Pilih jenis tanah' && humidity) {
-        const resultSection = document.getElementById('resultSection');
-        resultSection.classList.remove('hidden');
-        resultSection.classList.add('show');
+  if (location && soilType !== 'Pilih jenis tanah' && humidity) {
+    const resultSection = document.getElementById('resultSection');
+    resultSection.classList.remove('hidden');
+    resultSection.classList.add('show');
 
-        const recommendedPlant = getRecommendedPlant(soilType, humidity);
-        document.getElementById('recommendationText').innerText = `Tanaman yang cocok untuk wilayah ${location} dengan tanah jenis ${soilType} dan kelembaban ${humidity}% adalah: ${recommendedPlant}.`;
-      } else {
-        // Show modal if fields are incomplete
-        const validationModal = new bootstrap.Modal(document.getElementById('validationModal'));
-        validationModal.show();      
-      }
+    const { plant, reason, tableData } = getPlantDetails(soilType, humidity);
+    document.getElementById('recommendationText').innerText = `Tanaman yang cocok untuk wilayah ${location} dengan tanah jenis ${soilType} dan kelembaban ${humidity}% adalah: ${plant}.`;
+
+    // Update supporting table
+    const tableBody = document.getElementById('supportingData');
+    tableBody.innerHTML = ''; // Bersihkan isi tabel sebelumnya
+    
+    // Mengisi tabel menggunakan insertRow dan insertCell
+    tableData.forEach(data => {
+      const row = tableBody.insertRow(); // Tambah baris baru
+      const cellFactor = row.insertCell(0); // Tambah sel pertama (Factor)
+      const cellOptimal = row.insertCell(1); // Tambah sel kedua (Kondisi Optimal)
+      const cellDescription = row.insertCell(2); // Tambah sel ketiga (Keterangan)
+
+      // Masukkan data ke setiap sel
+      cellFactor.textContent = data.factor;
+      cellOptimal.textContent = data.optimalCondition;
+      cellDescription.textContent = data.description;
     });
+  } else {
+    const validationModal = new bootstrap.Modal(document.getElementById('validationModal'));
+    validationModal.show();
+  }
+});
 
-    function getRecommendedPlant(soilType, humidity) {
-      if (soilType === 'Tanah Liat') {
-        return humidity >= 50 ? 'Padi' : 'Kedelai';
-      } else if (soilType === 'Tanah Pasir') {
-        return humidity >= 40 ? 'Jagung' : 'Ubi Jalar';
-      } else if (soilType === 'Tanah Berhumus') {
-        return humidity >= 60 ? 'Kentang' : 'Wortel';
-      } else {
-        return 'Tanaman Tidak Diketahui';
-      }
-    }
+function getPlantDetails(soilType, humidity) {
+  let plant = '', reason = '', tableData = [];
+
+  if (soilType === 'Tanah Liat') {
+    plant = humidity >= 50 ? 'Padi' : 'Kedelai';
+    reason = `Tanah liat memiliki kemampuan menahan air yang baik sehingga ${humidity >= 50 ? 'Padi' : 'Kedelai'} cocok ditanam di kondisi tersebut.`;
+    tableData = [
+      { factor: 'Kebutuhan Air', optimalCondition: humidity >= 50 ? 'Tinggi' : 'Sedang', description: 'Tanaman membutuhkan air yang cukup agar tumbuh optimal.' },
+      { factor: 'Waktu Panen', optimalCondition: humidity >= 50 ? '4-6 Bulan' : '2-4 Bulan', description: 'Estimasi waktu panen sesuai kondisi.' }
+    ];
+  } else if (soilType === 'Tanah Pasir') {
+    plant = humidity >= 40 ? 'Jagung' : 'Ubi Jalar';
+    reason = `Tanah pasir memiliki drainase yang baik, sehingga cocok untuk tanaman yang tidak terlalu membutuhkan banyak air.`;
+    tableData = [
+      { factor: 'Kebutuhan Air', optimalCondition: 'Rendah', description: 'Drainase yang baik pada tanah pasir mendukung pertumbuhan tanaman ini.' },
+      { factor: 'Suhu Optimal', optimalCondition: '20-30°C', description: 'Suhu yang mendukung pertumbuhan tanaman di tanah pasir.' }
+    ];
+  }
+  return { plant, reason, tableData };
+}
   </script>
 </body>
 </html>
