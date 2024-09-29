@@ -76,18 +76,18 @@
 
     <!-- Manual Input Form -->
     <div id="manualForm" class="mt-4" style="display: none;">
-      <h4><strong>Input Manual</strong></h4>
+      <h4><strong>Input Data</strong></h4>
       <form>
         <div class="mb-3">
-          <label for="waterUsage" class="form-label">Penggunaan Air (Liter)</label>
+          <label for="waterUsage" class="form-label-res">Penggunaan Air (Liter)</label>
           <input type="number" class="form-control" id="waterUsage" placeholder="Contoh: 500" required />
         </div>
         <div class="mb-3">
-          <label for="fertilizerUsage" class="form-label">Penggunaan Pupuk (Kg)</label>
+          <label for="fertilizerUsage" class="form-label-res">Penggunaan Pupuk (Kg)</label>
           <input type="number" class="form-control" id="fertilizerUsage" placeholder="Contoh: 50" required />
         </div>
         <div class="mb-3">
-          <label for="energyUsage" class="form-label">Penggunaan Energi (KWh)</label>
+          <label for="energyUsage" class="form-label-res">Penggunaan Energi (KWh)</label>
           <input type="number" class="form-control" id="energyUsage" placeholder="Contoh: 30" required />
         </div>
         <button type="button" id="saveBtn" class="btn btn-success">Simpan Data</button>
@@ -107,7 +107,7 @@
 
     <!-- IoT Data Result -->
     <div id="iotResult" class="mt-4" style="display: none;">
-      <h4 class="text-success">Hasil Integrasi dengan IoT</h4>
+      <h4 class="text-success"><strong>Hasil Integrasi dengan IoT</strong></h4>
       <p>Berikut adalah data penggunaan sumber daya yang didapatkan dari sensor IoT:</p>
       <ul class="list-group">
         <li class="list-group-item">Penggunaan Air: 600 Liter</li>
@@ -157,7 +157,7 @@
 </div>
 
 <!-- Modal for validation message -->
-<div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
+<div class="modal fade" id="validationModalResources" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -201,7 +201,7 @@
   
         // Cek apakah semua field sudah diisi
         if (water === "" || fertilizer === "" || energy === "") {
-          $('#validationModal').modal('show'); // Tampilkan modal validasi jika field kosong
+          $('#validationModalResources').modal('show'); // Tampilkan modal validasi jika field kosong
         } else {
           // Jika semua field terisi, tampilkan hasil
           $('#waterData').text(water);
