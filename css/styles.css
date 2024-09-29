@@ -233,3 +233,184 @@ footer {
     padding: 10px;
     border-radius: 20px;
 }
+
+/* styles of resources page */
+#title-resources {
+    font-weight: 700;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  #footer-resources {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+  }
+
+.btn-outline-primary, .btn-outline-success {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-outline-primary:hover, .btn-outline-success:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  #manualForm, #iotResult, #manualResult {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+  }
+
+  #manualForm:hover, #iotResult:hover, #manualResult:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .list-group-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .list-group-item:hover {
+    background-color: #f1f1f1;
+  }
+
+  #setNotificationManual, #setNotificationIoT {
+    transition: background-color 0.4s ease, transform 0.4s ease;
+  }
+
+  #setNotificationManual:hover, #setNotificationIoT:hover {
+    background-color: #ffc107;
+    transform: translateY(-3px);
+  }
+
+  .modal-content {
+    animation: zoomIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .alert {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .alert.show {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* styles of recommendation page */
+  #body-recommendation {
+    background: url('../images/green-leaves-background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Menyesuaikan ukuran gambar */
+    font-family: 'Poppins', sans-serif; /* Mengatur font */
+    padding-top: 70px; /* Sesuaikan padding top sesuai tinggi navbar */
+}
+
+
+  #title-recommendation {
+    font-weight: 700;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  .overlay {
+    background: rgba(255, 255, 255, 0.85); /* Transparansi pada area konten */
+    padding: 30px 15px; /* Padding area konten */
+  }
+
+  .fade-in {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 1s;
+  }
+
+  .fade-in:hover {
+    transform: translateY(-5px);
+  }
+
+  #getRecommendation {
+    background-color: #198754;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  #getRecommendation:hover {
+    background-color: #145c3e;
+    transform: translateY(-2px);
+  }
+
+  #resultSection .alert {
+    background-color: #198754;
+    color: white;
+    transition: transform 0.5s, opacity 0.5s ease-in-out;
+  }
+  
+  #resultSection .alert-heading {
+    font-size: 24px;
+  }
+
+  #resultSection.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #resultSection.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  /* Footer */
+  #footer-recommendation {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+  }

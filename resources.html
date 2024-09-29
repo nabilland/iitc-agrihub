@@ -11,118 +11,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <style>
-    /* Custom Styles for Resource Management */
-    body, h2, p, button, .list-group-item {
-      font-family: 'Poppins', sans-serif;
-    }
 
-    .container h2 {
-      font-weight: 700;
-      animation: fadeInDown 1.2s ease-in-out;
-    }
-    
-    .btn-outline-primary, .btn-outline-success {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-outline-primary:hover, .btn-outline-success:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    #manualForm, #iotResult, #manualResult {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.4s ease;
-    }
-
-    #manualForm:hover, #iotResult:hover, #manualResult:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .list-group-item {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .list-group-item:hover {
-      background-color: #f1f1f1;
-    }
-
-    #setNotificationManual, #setNotificationIoT {
-      transition: background-color 0.4s ease, transform 0.4s ease;
-    }
-
-    #setNotificationManual:hover, #setNotificationIoT:hover {
-      background-color: #ffc107;
-      transform: translateY(-3px);
-    }
-
-    .modal-content {
-      animation: zoomIn 0.4s ease-in-out;
-    }
-
-    .footer {
-      background: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      padding: 20px;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .alert {
-      transition: all 0.3s ease-in-out;
-    }
-
-    .alert.show {
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -145,7 +34,7 @@
 
   <!-- Resource Management Content -->
   <div class="container mt-5 pt-5">
-    <h2 class="text-success text-center">Manajemen Sumber Daya</h2>
+    <h2 id="title-resources" class="text-success text-center">Manajemen Sumber Daya</h2>
     <p class="text-center">Pilih metode pengaturan sumber daya untuk pertanian Anda:</p>
 
     <!-- Input Manual -->
@@ -286,7 +175,7 @@
 </div>
   
   <!-- Footer -->
-  <footer class="footer text-center py-3">
+  <footer id="footer-resources" class="footer text-center py-3">
     &copy; 2024 <strong>AgriHub</strong>. All rights reserved.
   </footer>
   
