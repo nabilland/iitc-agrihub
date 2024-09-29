@@ -4,12 +4,16 @@ body {
 
 .navbar {
     padding: 20px;
-    background-color: #d6e3ed;
+    background-color: white;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
     transition: background-color 0.3s ease;
+}
+
+.navbar-custom {
+    background-color: #a4e3f7;
 }
 
 /* Navbar scroll effect */
@@ -18,8 +22,13 @@ body {
     padding: 20px;
 }
 
+.dashboard {
+    background-color: #a4e3f7;
+    border-radius: 20px;
+}
+
 footer {
-    background-color: #d6e3ed;
+    background-color: #a4e3f7;
     padding: 40px 0;
     position: relative;
     bottom: 0;
@@ -31,7 +40,7 @@ footer {
 .hero {
     width: 100%;
     height: 60vh;
-    background: url("../images/hero-2.jpg") bottom center;
+    background: url("../images/hero-4.jpg") bottom center;
     background-size: cover;
     position: relative;
     padding-top: 100px; /* Jarak dari navbar agar tidak tertutup */
@@ -143,7 +152,7 @@ footer {
 }
 
 #typed-output {
-    font-size: 3rem;
+    font-size: 2.35rem;
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -164,7 +173,28 @@ footer {
     'opsz' 100,
 }
 
-.material-symbols-outlined {
+.member-badge {
+    font-size: 2rem;
+    color: #198754;
+}
+
+.badges {
+    border-radius: 20%;
+}
+
+.breadcrumb-container {
+    display: flex;
+    align-items: center; /* Menyelaraskan secara vertikal */
+    margin-top: 90px; /* Sesuaikan nilai ini dengan tinggi navbar */
+}
+
+.breadcrumb {
+    background-color: #a4e3f7;
+    flex-grow: 1; /* Mengizinkan breadcrumb untuk mengambil sisa ruang */
+    padding: 10px 20px; /* Padding untuk breadcrumb */
+}
+
+.counter {
     font-size: 3rem;
     color: #198754;
 }
@@ -177,28 +207,28 @@ footer {
 }
 
 .qna-block-1 {
-    background-color: #70d030;
+    background-color: #198754;
     color: white;
     padding: 10px;
     border-radius: 20px;
 }
 
 .qna-block-2 {
-    background-color: #07b68b;
+    background-color: #349a6d;
     color: white;
     padding: 10px;
     border-radius: 20px;
 }
 
 .qna-block-3 {
-    background-color: #45c1d3;
+    background-color: #50af85;
     color: white;
     padding: 10px;
     border-radius: 20px;
 }
 
 .qna-block-4 {
-    background-color: #2daccd;
+    background-color: #6bc59d;
     color: white;
     padding: 10px;
     border-radius: 20px;

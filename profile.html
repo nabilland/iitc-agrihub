@@ -11,10 +11,6 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,91 +71,86 @@
       </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Category</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Subcategory</li>
-          </ol>
-      </nav>
-  </div>
-
     <div class="container py-5 mt-5">
-      <!-- Dashboard Content -->
-      <div class="row">
-        <h2 class="poppins-bold">Kondisi Tanamanmu Saat Ini</h2>
-
-        <!-- Stats Cards -->
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>25°C</h3>
-              <p>Suhu Saat Ini</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>60%</h3>
-              <p>Kelembaban Tanah</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>70%</h3>
-              <p>Kelembaban Udara</p>
-            </div>
-          </div>
+      <div class="row mt-5">
+        <!-- Profile Photo & Membership Status -->
+        <div class="col-md-4 text-center">
+          <img
+            src="images/farmer-4.png"
+            alt="User Photo"
+            class="rounded-circle mb-3"
+            width="200"
+          />
+          <h3 class="poppins-bold">Malika</h3>
+          <h5>
+            <span class="badge bg-warning p-2">Member Premium</span>
+          </h5>
         </div>
 
-        <!-- Charts -->
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="chart">
-              <h4>Perubahan Suhu</h4>
-              <canvas id="tempChart"></canvas>
-            </div>
-          </div>
-          <div class="col-md-6 mb-4">
-            <div class="chart">
-              <h4>Kelembaban Tanah</h4>
-              <canvas id="soilMoistureChart"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <!-- Environmental Monitoring -->
-          <div class="col-md-6 mb-4">
-            <h5>CO2 Levels</h5>
-            <canvas id="co2Chart"></canvas>
-          </div>
-          <div class="col-md-6 mb-4">
-            <h5>Intensitas Cahaya</h5>
-            <canvas id="lightIntensityChart"></canvas>
-          </div>
-        </div>
-
-        <!-- Alerts and Notifications -->
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <h5>Peringatan & Notifikasi</h5>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <i class="fas fa-thermometer-half text-danger"></i> Suhu tinggi
-                terdeteksi.
+        <!-- User Information -->
+        <div class="col-md-8">
+          <h4 class="poppins-bold">Profil Saya</h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+                <strong>Nama:</strong> Malika
               </li>
-              <li class="list-group-item">
-                <i class="fas fa-tint text-info"></i> Kelembaban tanah rendah.
-              </li>
-            </ul>
-          </div>
-        </div>
+            <li class="list-group-item">
+              <strong>Nomor Telepon:</strong> +62 812 3456 7890
+            </li>
+            <li class="list-group-item">
+              <strong>Email:</strong> user@example.com
+            </li>
+            <li class="list-group-item">
+              <strong>Alamat:</strong> Jalan Merpati No. 1, Sragen, Jawa Tengah, Indonesia
+            </li>
+          </ul>
 
-        <a href="plant-guide.html" class="btn btn-info mt-4"
-          >Panduan Penanaman</a
-        >
+          <!-- Badges & Gamification -->
+          <h4 class="poppins-bold pt-3">Pencapaian</h4>
+          <div class="d-flex gap-3 mb-3">
+            <div class="badge-container text-center">
+              <img
+                src="images/badge-1.png"
+                alt="Badge 1"
+                class="img-fluid badges"
+                width="80"
+              />
+              <p class="mt-2">Top Farmer</p>
+            </div>
+            <div class="badge-container text-center">
+              <img
+                src="images/badge-2.png"
+                alt="Badge 2"
+                class="img-fluid badges"
+                width="80"
+              />
+              <p class="mt-2">Plant Expert</p>
+            </div>
+            <div class="badge-container text-center">
+              <img
+                src="images/badge-3.png"
+                alt="Badge 3"
+                class="img-fluid badges"
+                width="80"
+              />
+              <p class="mt-2">Eco Warrior</p>
+            </div>
+          </div>
+
+          <!-- Additional Info -->
+          <h4 class="poppins-bold pt-3">Catatan Aktivitas</h4>
+          <ul class="list-group">
+            <li class="list-group-item">
+                Terdaftar pada Program Smart Agriculture 2024
+            </li>
+            <li class="list-group-item">
+                Berpartisipasi dalam Komunitas Petani
+            </li>
+            <li class="list-group-item">
+                Mengelola 10 hektar lahan pertanian aktif
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -169,9 +160,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Chart.js Initialization -->
     <script>
