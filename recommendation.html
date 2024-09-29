@@ -18,6 +18,11 @@
       padding-top: 70px; /* Sesuaikan padding top sesuai tinggi navbar */
     }
 
+    .container h2 {
+      font-weight: 700;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
     .overlay {
       background: rgba(255, 255, 255, 0.85); /* Transparansi pada area konten */
       padding: 30px 15px; /* Padding area konten */
@@ -102,7 +107,7 @@
   <!-- Overlay Container for Content -->
   <div class="overlay">
     <div class="container mt-5">
-      <h2 class="text-center mb-4">Rekomendasi Tanaman</h2>
+      <h2 class="text-success text-center">Rekomendasi Tanaman</h2>
       <p class="text-center mb-5">Dapatkan rekomendasi tanaman berdasarkan kondisi lingkungan Anda untuk hasil pertanian optimal.</p>
       
       <div class="row">
@@ -139,6 +144,7 @@
           <div class="alert alert-success hidden" id="resultSection" role="alert">
             <h4 class="alert-heading"><strong>Hasil Rekomendasi</strong></h4>
             <p id="recommendationText">Tanaman yang cocok untuk kondisi ini adalah: </p>
+            <h4 class="alert-heading"><strong>Informasi Tambahan</strong></h4>
 
             <!-- Supporting Table -->
             <table class="table table-bordered">
@@ -239,9 +245,18 @@ function getPlantDetails(soilType, humidity) {
       { factor: 'Kebutuhan Air', optimalCondition: 'Rendah', description: 'Drainase yang baik pada tanah pasir mendukung pertumbuhan tanaman ini.' },
       { factor: 'Suhu Optimal', optimalCondition: '20-30°C', description: 'Suhu yang mendukung pertumbuhan tanaman di tanah pasir.' }
     ];
+  } else if (soilType === 'Tanah Berhumus') {
+    plant = humidity >= 50 ? 'Sayuran (Seperti Selada dan Bayam)' : 'Tanaman Bunga (Seperti Mawar dan Melati)';
+    reason = `Tanah berhumus sangat kaya akan nutrisi, sehingga ${humidity >= 50 ? 'Sayuran' : 'Tanaman Bunga'} dapat tumbuh dengan baik.`;
+    tableData = [
+      { factor: 'Kandungan Nutrisi', optimalCondition: 'Tinggi', description: 'Tanah berhumus kaya akan bahan organik yang mendukung pertumbuhan tanaman.' },
+      { factor: 'Kelembapan', optimalCondition: 'Sedang hingga Tinggi', description: 'Kelembapan yang tepat sangat penting untuk pertumbuhan optimal.' }
+    ];
   }
+
   return { plant, reason, tableData };
 }
+
   </script>
 </body>
 </html>
