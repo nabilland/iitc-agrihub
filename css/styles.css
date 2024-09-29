@@ -184,14 +184,23 @@ footer {
 
 .breadcrumb-container {
     display: flex;
-    align-items: center; /* Menyelaraskan secara vertikal */
-    margin-top: 90px; /* Sesuaikan nilai ini dengan tinggi navbar */
+    align-items: center;
+    margin-top: 90px;
 }
 
 .breadcrumb {
-    background-color: #a4e3f7;
-    flex-grow: 1; /* Mengizinkan breadcrumb untuk mengambil sisa ruang */
-    padding: 10px 20px; /* Padding untuk breadcrumb */
+    background-color: white;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px 0px;
+}
+
+.breadcrumb-item a {
+    color: #fd7d1c;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
 }
 
 .counter {
@@ -204,6 +213,11 @@ footer {
     height: auto;
     padding: 10px;
     margin-left: 50px;
+}
+
+.qna .container {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .qna-block-1 {
@@ -232,4 +246,22 @@ footer {
     color: white;
     padding: 10px;
     border-radius: 20px;
+}
+
+.glow-button {
+    position: relative;
+    border: none;
+    color: #28a745;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: 0.5s;
+    background-color: transparent;
+    box-shadow: 0 0 5px #28a745, 0 0 25px #28a745, 0 0 50px #28a745, 0 0 100px #28a745;
+}
+
+.glow-button:hover {
+    color: white;
+    background-color: #28a745;
+    box-shadow: 0 0 20px #28a745, 0 0 40px #28a745, 0 0 80px #28a745;
 }
