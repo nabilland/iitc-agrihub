@@ -157,164 +157,136 @@
 
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" id="logo" alt="Logo" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="plant-guide.html">Plant Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
+    <!-- Sidebar -->
+    <div class="d-flex">
+      <nav id="sidebar" class="bg-light sidebar">
+        <div class="p-4">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" id="logo" alt="Logo" class="img-fluid" />
+          </a>
+          <ul class="list-unstyled components mt-4">
+            <li>
+              <a href="profile.html">Profil Saya</a>
+            </li>
+            <li>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="plant-guide.html">Plant Guide</a>
+            </li>
+            <li>
+              <a href="community.html">Community</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="home.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+<!-- Page Content -->
+        <div id="content" class="p-4">
+            <div class="container">
+                <!-- Logged-in Section -->
+                <div id="logged-in-user">
+                    <h1><b>Bagikan <span style="color: #198754;">Tips!</span></b></h1>
+                    <p>Selamat datang, <span id="display-username" style="color: #198754;">Malika</span>! Ayo, bagikan tips dan pengalamanmu!</p>
+                </div>
+
+                <!-- Tips Submission Form -->
+                <div class="form-container" id="discussion-section">
+                    <form id="discussion-form">
+                        <input type="text" id="title" placeholder="Judul" required>
+                        <textarea id="content-isi" placeholder="Tulis artikel atau tips di sini..." required></textarea>
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
+
+                <br>
+                <h2>Daftar Diskusi dan Artikel</h2>
+                <div id="article-list">
+                    <!-- Daftar artikel akan ditampilkan di sini -->
+                </div>
             </div>
-        </div>
-    </nav>
-
-<div class="container" style="padding-top: 150px;">
-        <div style="background-color: #ffffff; padding-bottom: 20px; text-align: left; ">
-            <p style="margin: 0; color: #4CAF50; font-weight: bold; display: inline-block; background-color: #E8F5E9; padding: 10px 20px; border-radius: 10px;">
-                Home > Diskusi dan Artikel Penanaman Tanaman
-            </p>
-        </div>
-
-        <!-- Container Utama -->
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <!-- Login Form -->
-            <div class="login-container" id="login-section" style="background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; width: 500px;">
-                <h2 style="margin-bottom: 20px;">Login</h2>
-                <input type="text" id="username-input" placeholder="Masukkan Nama Pengguna" required style="margin-bottom: 10px; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
-                <input type="password" id="password-input" placeholder="Masukkan Password" required style="margin-bottom: 10px; padding: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
-                <button id="login-btn" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Login</button>
-            </div>
-        </div>
-
-
-        <!-- Logged-in Section -->
-        <div id="logged-in-user" style="display: none;">
-            <h1>Bagikan <span style="color: #198754;">Tips!</span></h1>
-            <p>Selamat datang, <span id="display-username"></span>!</p>
-        </div>
-
-        <!-- Tips Submission Form -->
-        <div class="form-container" id="discussion-section" style="display: none;">
-            <form id="discussion-form">
-                <input type="text" id="title" placeholder="Judul" required>
-                <textarea id="content" placeholder="Tulis artikel atau tips di sini..." required></textarea>
-                <button type="submit">Kirim</button>
-            </form>
-        </div>
-
-        <h2>Daftar Diskusi dan Artikel</h2>
-        <div id="article-list">
-            <!-- Daftar artikel akan ditampilkan di sini -->
         </div>
     </div>
 
-<script>
-    // Fungsi untuk mengambil waktu saat ini dalam format yang ramah pengguna
-    function getCurrentTime() {
-        const now = new Date();
-        const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-        return now.toLocaleDateString('en-GB', options);
-    }
+    <br>
+    <br>
+    <br>
+    <footer class="bg-light text-center py-3 mt-5">
+        &copy; 2024 Smart Agriculture. All rights reserved.
+    </footer>
 
-    // Fungsi untuk login dan simpan nama pengguna ke Local Storage
-    document.getElementById('login-btn').addEventListener('click', function() {
-        const username = document.getElementById('username-input').value;
-        if (username) {
-            localStorage.setItem('username', username); // Simpan nama pengguna ke Local Storage
-            displayUser();
+    <script>
+        // Fungsi untuk mengambil waktu saat ini dalam format yang ramah pengguna
+        function getCurrentTime() {
+            const now = new Date();
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            return now.toLocaleDateString('en-GB', options);
         }
-    });
 
-    // Fungsi untuk menampilkan pengguna yang login
-    function displayUser() {
-        const username = localStorage.getItem('username');
-        if (username) {
-            document.getElementById('display-username').textContent = username;
-            document.getElementById('login-section').style.display = 'none';
-            document.getElementById('logged-in-user').style.display = 'block';
-            document.getElementById('discussion-section').style.display = 'block';
-        }
-    }
+        // Nama pengguna hardcode
+        const username = "Malika";
 
-    // Menampilkan pengguna saat reload jika sudah login
-    window.onload = function() {
-        displayUser();
-    };
+        // JavaScript untuk Interaksi Diskusi dan Komentar
+        document.getElementById('discussion-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah pengiriman form yang default
 
-    // JavaScript untuk Interaksi Diskusi dan Komentar
-    document.getElementById('discussion-form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Mencegah pengiriman form yang default
-
-        // Ambil nilai dari input
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
-        const username = localStorage.getItem('username');
-        const currentTime = getCurrentTime();
-
-        // Buat elemen artikel baru
-        const article = document.createElement('div');
-        article.className = 'article';
-        article.innerHTML = `
-            <h3>${title}</h3>
-            <div class="article-meta">Oleh: ${username} - ${currentTime}</div>
-            <p>${content}</p>
-            <div class="comments" id="comments-section"></div>
-            <div class="comment-form">
-                <input type="text" placeholder="Tulis komentar..." class="comment-input">
-                <button class="comment-btn">Kirim</button>
-            </div>
-        `;
-
-        // Tambahkan artikel ke dalam daftar
-        document.getElementById('article-list').appendChild(article);
-
-        // Reset form
-        document.getElementById('discussion-form').reset();
-
-        // Menambahkan event listener untuk komentar
-        const commentButton = article.querySelector('.comment-btn');
-        const commentInput = article.querySelector('.comment-input');
-        const commentsSection = article.querySelector('#comments-section');
-
-        commentButton.addEventListener('click', function() {
-            const commentText = commentInput.value;
+            // Ambil nilai dari input
+            const title = document.getElementById('title').value;
+            const contentIsi = document.getElementById('content-isi').value; // Ubah 'content-isi' menjadi nama variabel yang benar
             const currentTime = getCurrentTime();
 
-            if (commentText !== "" && username !== "") {
-                const newComment = document.createElement('div');
-                newComment.className = 'comment';
-                newComment.innerHTML = `
-                    <div class="comment-header">
-                        <span class="comment-username">${username}</span> - <span class="comment-time">${currentTime}</span>
-                    </div>
-                    <p>${commentText}</p>
-                `;
+            // Buat elemen artikel baru
+            const article = document.createElement('div');
+            article.className = 'article';
+            article.innerHTML = `
+                <h3>${title}</h3>
+                <div class="article-meta">Oleh: ${username} - ${currentTime}</div>
+                <p>${contentIsi}</p>
+                <div class="comments" id="comments-section"></div>
+                <div class="comment-form">
+                    <input type="text" placeholder="Tulis komentar..." class="comment-input">
+                    <button class="comment-btn">Kirim</button>
+                </div>
+            `;
 
-                commentsSection.appendChild(newComment);
+            // Tambahkan artikel ke dalam daftar
+            document.getElementById('article-list').appendChild(article);
 
-                // Reset input komentar setelah dikirim
-                commentInput.value = '';
-            }
+            // Reset form
+            document.getElementById('discussion-form').reset();
+
+            // Menambahkan event listener untuk komentar
+            const commentButton = article.querySelector('.comment-btn');
+            const commentInput = article.querySelector('.comment-input');
+            const commentsSection = article.querySelector('#comments-section');
+
+            commentButton.addEventListener('click', function() {
+                const commentText = commentInput.value;
+                const currentTime = getCurrentTime();
+
+                if (commentText !== "" && username !== "") {
+                    const newComment = document.createElement('div');
+                    newComment.className = 'comment';
+                    newComment.innerHTML = `
+                        <div class="comment-header">
+                            <span class="comment-username">${username}</span> - <span class="comment-time">${currentTime}</span>
+                        </div>
+                        <p>${commentText}</p>
+                    `;
+
+                    commentsSection.appendChild(newComment);
+
+                    // Reset input komentar setelah dikirim
+                    commentInput.value = '';
+                }
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
