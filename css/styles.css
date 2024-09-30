@@ -247,6 +247,7 @@ footer {
     border-radius: 20px;
 }
 
+
 .glow-button {
     position: relative;
     border: none;
@@ -595,6 +596,7 @@ a, a:hover, a:focus {
 #content {
     margin-left: 250px;
     width: calc(100% - 250px);
+>>>>>>> 3279b372b4bbf08d7ab3d975bc33eed784060207
 }
 
 .season-card, .harvest-card, .enviro-card {
