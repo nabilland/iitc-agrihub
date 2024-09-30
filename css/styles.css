@@ -67,11 +67,11 @@ footer {
     color:#198754;
 }
 
-.card-body .icons {
+.dashboard-card-body .icons {
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .icons {
+.dashboard-card:hover .icons {
     transform: scale(1.2);
 }
 
@@ -456,8 +456,7 @@ footer {
 }
 
 .register-card {
-    width: 100%;
-    max-width: 600px;
+    width: 40%;
     border-radius: 10px;
     background: #ffffff;
     padding: 2rem;
@@ -513,24 +512,57 @@ footer {
     text-align: center;
 }
 
+.date-card {
+    background-color: #c7eeaf;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-card {
+    background-color: #ffe5b4;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.date-card {
+    background-color: #c7eeaf;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.status-good, .status-low, .status-moderate, .status-normal {
+    color: white;
+    padding: 5px 10px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
 .status-good {
-    color: green;
+    background-color: rgb(7, 112, 7);
 }
 
 .status-low {
-    color: red;
+    background-color: rgb(231, 9, 9);
 }
 
-a {
-    text-decoration: none !important;
+.status-moderate {
+    background-color: #ddcc13;
+}
+
+.status-normal {
+    background-color: rgb(30, 0, 255);
 }
 
 a, a:hover, a:focus {
     text-decoration: none !important;
 }
 
-
-/* Custom styling for the sidebar */
 #sidebar {
     width: 250px;
     position: fixed;
@@ -554,9 +586,6 @@ a, a:hover, a:focus {
 
 #sidebar ul li a {
     color: #000;
-    text-decoration: none;
-    display: block;
-    width: 100%;
 }
 
 #sidebar ul li a:hover {
@@ -567,4 +596,404 @@ a, a:hover, a:focus {
 #content {
     margin-left: 250px;
     width: calc(100% - 250px);
+}
+
+.season-card, .harvest-card, .enviro-card {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.season-card {
+    background-image: url("../images/rainy.png");
+}
+
+.harvest-card {
+    background-image: url("../images/plant.png");
+}
+
+.enviro-card {
+    background-image: url("../images/enviro.png");
+}
+
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .status-good, .status-low, .status-moderate, .status-normal {
+    padding: 3px 5px;
+    font-size: 12px;
+}
+}
+
+/* styles of warning page */
+
+  .page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    color: #444;
+    animation: fadeInDown 1s ease;
+  }
+
+  .alert-grid {
+    display: grid;
+    justify-content: center; /* Posisikan grid di tengah */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    animation: fadeInUp 1s ease;
+  }
+
+  .alert {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding-top: 30px; /* Tambahan padding atas untuk mengakomodasi ikon besar */
+  }
+
+  .alert:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .alert-heading {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .alert-icon {
+    display: block;
+    margin: 0 auto 15px; /* Jarak antara ikon dan heading */
+    width: 80px; /* Mengubah ukuran lebar ikon */
+    height: 80px; /* Mengubah ukuran tinggi ikon */
+  }
+
+  .alert-warning {
+    background-color: #fff3cd;
+    border-left: 5px solid #ffc107;
+  }
+
+  .alert-danger {
+    background-color: #f8d7da;
+    border-left: 5px solid #dc3545;
+  }
+
+  .alert-info {
+    background-color: #d1ecf1;
+    border-left: 5px solid #17a2b8;
+  }
+
+  .alert-success {
+    background-color: #d4edda;
+    border-left: 5px solid #28a745;
+  }
+
+  hr {
+    border-top: 1px solid #ddd;
+  }
+
+  p {
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .alert:hover p {
+    color: #333;
+  }
+
+  /* Button panah */
+  .btn-icon {
+    display: block;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-icon:hover {
+    opacity: 0.7; /* Feedback on hover */
+  }
+
+  /* Card informasi cara menanggulangi */
+  .info-card {
+    display: none;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-container {
+    width: 80%;
+    height: 350px; /* Sesuaikan tinggi sesuai kebutuhan */
+    perspective: 100px;
+  }
+  .card-flip {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .flip-card-front {
+    background-color: #d4edda;
+    z-index: 2;
+  }
+  .flip-card-back {
+    background-color: #f1f1f1;
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+  .card-container.flipped .card-flip {
+    transform: rotateY(180deg);
+  }
+  .btn-arrow {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #8aa0b7c0;
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .alert-weather {
+  background-color: #fff3cd; /* Warna untuk Cuaca Ekstrem */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.alert-weather:hover {
+  background-color: #dfd0a4; /* Warna saat hover */
+  transform: scale(1.05); /* Sedikit memperbesar saat hover */
+}
+
+.alert-pest {
+  background-color: #f8d7da; /* Warna untuk Hama Tanaman */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.alert-pest:hover {
+  background-color: #f5c6cb; /* Warna saat hover */
+  transform: scale(1.05); /* Sedikit memperbesar saat hover */
+}
+
+.alert-watering {
+  background-color: #d1ecf1; /* Warna untuk Rekomendasi Penyiraman */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.alert-watering:hover {
+  background-color: #bee5eb; /* Warna saat hover */
+  transform: scale(1.05); /* Sedikit memperbesar saat hover */
+}
+
+.alert-optimal {
+  background-color: #d4edda; /* Warna untuk Tanaman Optimal */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efek transisi */
+}
+
+.alert-optimal:hover {
+  background-color: #c3e6cb; /* Warna saat hover */
+  transform: scale(1.05); /* Sedikit memperbesar saat hover */
+}
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  h5 {
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  /* Profile Section */
+  .profile-section .profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #4caf50;
+  }
+
+  .membership-status {
+    color: #4caf50;
+    font-size: 0.9em;
+  }
+
+  .badge-container .badge {
+    margin-right: 5px;
+    font-size: 0.8em;
+  }
+
+  /* Environmental Factors Section */
+  .environmental-section {
+    padding: 20px;
+  }
+
+  .modern-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .modern-card .card-body {
+    display: flex;
+    align-items: center;
+  }
+
+  .modern-card h5 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  .modern-card .status-good,
+  .modern-card .status-low,
+  .modern-card .status-moderate {
+    font-size: 1.2em;
+    padding: 3px 12px;
+    border-radius: 15px;
+  }
+
+  .status-good {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .status-low {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .status-moderate {
+    background-color: #ff9800;
+    color: white;
+  }
+
+  /* Icon Styling */
+  .modern-card i {
+    color: #4caf50;
+  }
+
+  .ml-3 {
+    margin-left: 1rem;
+  }
+
+  /* Styles for sidebar */
+  #sidebar {
+    display: none; /* Hide sidebar by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f8f9fa;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+/* Styles for hamburger menu */
+.hamburger {
+    cursor: pointer;
+    display: flex; /* Always show hamburger */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    z-index: 1001; /* Ensure hamburger is on top */
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+/* Show the hamburger icon on small screens */
+@media (max-width: 768px) {
+    #sidebar {
+        display: none; /* Hide sidebar by default */
+    }
+}
+
+/* Active state for sidebar */
+#sidebar.active {
+    display: block; /* Show sidebar when active */
+}
+
+#content.active {
+    margin-left: 250px; /* Push content to the right when sidebar is active */
 }

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AgriHub - Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/65ec807597.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="d-flex">
+      <div id="sidebar-toggle" class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <nav id="sidebar" class="bg-light sidebar">
+        <div class="p-4">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" id="logo" alt="Logo" class="img-fluid" />
+          </a>
+          <ul class="list-unstyled components mt-4">
+            <li>
+              <a href="profile.html">Profil Saya</a>
+            </li>
+            <li>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="plant-guide.html">Plant Guide</a>
+            </li>
+            <li>
+              <a href="recommendation.html">Rekomendasi Tanaman</a>
+            </li>
+            <li>
+              <a href="resources.html">Manajemen Sumber Daya</a>
+            </li>
+            <li>
+              <a href="warning.html">Peringatan & Notifikasi</a>
+            </li>
+            <li>
+              <a href="home.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- <nav id="sidebar" class="bg-light sidebar">
+        <div class="p-4">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" id="logo" alt="Logo" class="img-fluid" />
+          </a>
+          <ul class="list-unstyled components mt-4">
+            <li>
+              <a href="profile.html">Profil Saya</a>
+            </li>
+            <li>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="plant-guide.html">Plant Guide</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav> -->
+
+      <!-- Page Content -->
+      <div id="content" class="p-4">
+        <!-- Breadcrumb -->
+        <div class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item poppins-medium">
+                <a href="dashboard.html">Dashboard</a>
+              </li>
+              <li
+                class="breadcrumb-item active poppins-medium"
+                aria-current="page"
+              >
+                Perkebunan Agro Mulyo
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="container">
+          <h3 class="poppins-bold mb-4">Perkebunan Agro Mulyo</h3>
+          <h5 class="poppins-semibold mb-3">Senin, 30 September 2024</h5>
+
+          <div class="row">
+            <!-- Current Season Card -->
+            <div class="col-md-6 col-sm-12 mb-4">
+              <div class="card season-card">
+                <div class="card-body text-left">
+                  <h4 class="poppins-bold mb-3">Musim & Cuaca Saat Ini</h4>
+                  <div class="row">
+                    <div class="col-5">
+                      <div>
+                        <p>
+                          <span class="poppins-semibold">Musim</span>
+                          <br />
+                          Penghujan
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <p>
+                        <span class="poppins-semibold">Cuaca</span> <br />
+                        Hujan Ringan
+                      </p>
+                      <h5></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Harvest Prediction Card -->
+            <div class="col-md-6 col-sm-12 mb-4">
+              <div class="card prediction-card harvest-card">
+                <div class="card-body text-left">
+                  <h4 class="poppins-bold mb-3">Prediksi Panen</h4>
+                  <div class="row">
+                    <div class="col-5">
+                      <div>
+                        <p>
+                          <span class="poppins-semibold">Tanggal Panen</span>
+                          <br />
+                          15 November 2024
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <p>
+                        <span class="poppins-semibold">Sisa Waktu</span> <br />
+                        45 Hari Lagi
+                      </p>
+                      <h5></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <!-- Sidebar Profil -->
+              <div class="col-md-3">
+                <div class="profile-card text-center p-3">
+                  <div class="profile-pic">
+                    <img
+                      src="images/selada-real.png"
+                      alt="Profile Icon"
+                      class="img-fluid rounded-circle"
+                    />
+                  </div>
+                  <div class="account-details">
+                    <h5 class="poppins-bold">Jenis Tanaman</h5>
+                    <p>Selada</p>
+                    <!-- Add other necessary information without username -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-9">
+                <!-- Factor Cards -->
+                <h2 class="poppins-bold mb-4">Faktor Lingkungan</h2>
+                <div class="row text-center">
+                  <!-- Kelembaban Tanah -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-tint fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Kelembaban Tanah</strong></h5>
+                        <p class="status-good poppins-bold">70%</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Pastikan tanah
+                          tetap lembab
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kelembaban Udara -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-cloud fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Kelembaban Udara</strong></h5>
+                        <p class="status-good poppins-bold">60%</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Perlu
+                          pemantauan untuk mencegah kekeringan
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Curah Hujan -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-cloud-rain fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Curah Hujan</strong></h5>
+                        <p class="status-low poppins-bold">1300 mm</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Pastikan
+                          saluran drainase berfungsi baik
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kecepatan Angin -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-wind fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Kecepatan Angin</strong></h5>
+                        <p class="status-low poppins-bold">16 km/h</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Periksa
+                          potensi kerusakan pada tanaman
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Suhu Udara -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-thermometer-half fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Suhu Udara</strong></h5>
+                        <p class="status-good poppins-bold">20&deg;C</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Nilai ini
+                          ideal untuk pertumbuhan tanaman
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- pH Tanah -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-flask fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>pH Tanah</strong></h5>
+                        <p class="status-moderate poppins-bold">6.0</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Pastikan untuk
+                          menjaga keseimbangan pH
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Drainase Tanah -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-water fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Drainase Tanah</strong></h5>
+                        <p class="status-good poppins-bold">Baik</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Drainase sudah
+                          baik untuk tanaman
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Kandungan Nitrogen -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-leaf fa-3x text-dark"></i>
+                        <h5 class="mt-3">
+                          <strong>Kandungan Nitrogen</strong>
+                        </h5>
+                        <p class="status-moderate poppins-bold">3.5%</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Pemupukan
+                          tambahan mungkin diperlukan
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Intensitas Cahaya -->
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <i class="fas fa-sun fa-3x text-dark"></i>
+                        <h5 class="mt-3"><strong>Intensitas Cahaya</strong></h5>
+                        <p class="status-good poppins-bold">1200 lux</p>
+                        <p class="mt-3">
+                          <span class="poppins-bold">Tips:</span> Pastikan
+                          tanaman mendapatkan cukup cahaya
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-light text-center py-3 mt-5">
+          &copy; 2024 Smart Agriculture. All rights reserved.
+        </footer>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js Initialization -->
+    <script>
+      const tempCtx = document.getElementById("tempChart").getContext("2d");
+      const tempChart = new Chart(tempCtx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+          datasets: [
+            {
+              label: "Suhu (°C)",
+              data: [20, 22, 23, 25, 26, 28],
+              borderColor: "#FF5733",
+              backgroundColor: "rgba(255, 87, 51, 0.2)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 35,
+            },
+          },
+        },
+      });
+
+      const soilCtx = document
+        .getElementById("soilMoistureChart")
+        .getContext("2d");
+      const soilMoistureChart = new Chart(soilCtx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+          datasets: [
+            {
+              label: "Kelembaban Tanah (%)",
+              data: [60, 55, 58, 63, 62, 60],
+              borderColor: "#28A745",
+              backgroundColor: "rgba(40, 167, 69, 0.2)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+            },
+          },
+        },
+      });
+
+      const co2Ctx = document.getElementById("co2Chart").getContext("2d");
+      const co2Chart = new Chart(co2Ctx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+          datasets: [
+            {
+              label: "CO2 Levels (ppm)",
+              data: [400, 420, 430, 410, 415, 405],
+              borderColor: "#FFC300",
+              backgroundColor: "rgba(255, 195, 0, 0.2)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: false,
+            },
+          },
+        },
+      });
+
+      const lightCtx = document
+        .getElementById("lightIntensityChart")
+        .getContext("2d");
+      const lightIntensityChart = new Chart(lightCtx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+          datasets: [
+            {
+              label: "Intensitas Cahaya (lux)",
+              data: [300, 320, 290, 310, 305, 315],
+              borderColor: "#17A2B8",
+              backgroundColor: "rgba(23, 162, 184, 0.2)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+
+    <script>
+      document
+        .getElementById("sidebar-toggle")
+        .addEventListener("click", function () {
+          const sidebar = document.getElementById("sidebar");
+          const content = document.getElementById("content");
+
+          sidebar.classList.toggle("active");
+          content.classList.toggle("active");
+
+          // Optional: Change hamburger icon to close icon
+          if (sidebar.classList.contains("active")) {
+            this.classList.add("open");
+          } else {
+            this.classList.remove("open");
+          }
+        });
+    </script>
+  </body>
+</html>
