@@ -67,11 +67,11 @@ footer {
     color:#198754;
 }
 
-.card-body .icons {
+.dashboard-card-body .icons {
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .icons {
+.dashboard-card:hover .icons {
     transform: scale(1.2);
 }
 
@@ -455,8 +455,7 @@ footer {
 }
 
 .register-card {
-    width: 100%;
-    max-width: 600px;
+    width: 40%;
     border-radius: 10px;
     background: #ffffff;
     padding: 2rem;
@@ -512,24 +511,57 @@ footer {
     text-align: center;
 }
 
+.date-card {
+    background-color: #c7eeaf;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-card {
+    background-color: #ffe5b4;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.date-card {
+    background-color: #c7eeaf;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.status-good, .status-low, .status-moderate, .status-normal {
+    color: white;
+    padding: 5px 10px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+
 .status-good {
-    color: green;
+    background-color: rgb(7, 112, 7);
 }
 
 .status-low {
-    color: red;
+    background-color: rgb(231, 9, 9);
 }
 
-a {
-    text-decoration: none !important;
+.status-moderate {
+    background-color: #ddcc13;
+}
+
+.status-normal {
+    background-color: rgb(30, 0, 255);
 }
 
 a, a:hover, a:focus {
     text-decoration: none !important;
 }
 
-
-/* Custom styling for the sidebar */
 #sidebar {
     width: 250px;
     position: fixed;
@@ -553,9 +585,6 @@ a, a:hover, a:focus {
 
 #sidebar ul li a {
     color: #000;
-    text-decoration: none;
-    display: block;
-    width: 100%;
 }
 
 #sidebar ul li a:hover {
@@ -566,4 +595,42 @@ a, a:hover, a:focus {
 #content {
     margin-left: 250px;
     width: calc(100% - 250px);
+}
+
+.season-card, .harvest-card, .enviro-card {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.season-card {
+    background-image: url("../images/rainy.png");
+}
+
+.harvest-card {
+    background-image: url("../images/plant.png");
+}
+
+.enviro-card {
+    background-image: url("../images/enviro.png");
+}
+
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .status-good, .status-low, .status-moderate, .status-normal {
+    padding: 3px 5px;
+    font-size: 12px;
 }

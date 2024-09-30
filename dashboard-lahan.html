@@ -68,50 +68,152 @@
 
       <!-- Page Content -->
       <div id="content" class="p-4">
+        <!-- Breadcrumb -->
         <div class="container">
-          <div class="row">
-            <h3 class="title poppins-bold pt-5">Halo, Malika</h3>
-            <h2 class="poppins-bold mb-5">Mari pantau kondisi tanamanmu!</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item poppins-medium">
+                <a href="dashboard.html">Dashboard</a>
+              </li>
+              <li
+                class="breadcrumb-item active poppins-medium"
+                aria-current="page"
+              >
+                Perkebunan Agro Mulyo
+              </li>
+            </ol>
+          </nav>
+        </div>
 
-            <div class="container mb-4">
-              <h5 class="form-label">Pilih Lokasi Lahan:</h5>
-              <div class="row">
-                <div class="col-md-4">
-                  <a href="dashboard-lahan.html">
-                    <div class="card lahan-card" id="lahan1">
-                      <img
-                        src="images/kebun-selada.png"
-                        class="card-img-top"
-                        alt="Perkebunan Agro Mulyo"
-                        width="50"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Perkebunan Agro Mulyo</h5>
+        <div class="container">
+          <h3 class="poppins-bold mb-4">Perkebunan Agro Mulyo</h3>
+          <h5 class="poppins-semibold mb-3">Senin, 30 September 2024</h5>
+
+          <div class="row">
+            <!-- Current Season Card -->
+            <div class="col-md-6 col-sm-12 mb-4">
+              <div class="card season-card">
+                <div class="card-body text-left">
+                  <h4 class="poppins-bold mb-3">Musim & Cuaca Saat Ini</h4>
+                  <div class="row">
+                    <div class="col-5">
+                      <div>
+                        <p>
+                          <span class="poppins-semibold">Musim</span>
+                          <br />
+                          Penghujan
+                        </p>
                       </div>
                     </div>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <div class="card lahan-card" id="lahan2">
-                    <img
-                      src="images/kebun-tomat.png"
-                      class="card-img-top"
-                      alt="Perkebunan Bukit Asri"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Perkebunan Bukit Asri</h5>
+                    <div class="col-5">
+                      <p>
+                        <span class="poppins-semibold">Cuaca</span> <br />
+                        Hujan Ringan
+                      </p>
+                      <h5></h5>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="card lahan-card" id="lahan3">
-                    <img
-                      src="images/kebun-wortel.png"
-                      class="card-img-top"
-                      alt="Perkebunan Citra Nusantara"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Perkebunan Citra Nusantara</h5>
+              </div>
+            </div>
+
+            <!-- Harvest Prediction Card -->
+            <div class="col-md-6 col-sm-12 mb-4">
+              <div class="card prediction-card harvest-card">
+                <div class="card-body text-left">
+                  <h4 class="poppins-bold mb-3">Prediksi Panen</h4>
+                  <div class="row">
+                    <div class="col-5">
+                      <div>
+                        <p>
+                          <span class="poppins-semibold">Tanggal Panen</span>
+                          <br />
+                          15 November 2024
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <p>
+                        <span class="poppins-semibold">Sisa Waktu</span> <br />
+                        45 Hari Lagi
+                      </p>
+                      <h5></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Additional Environmental Factors Card -->
+            <div class="col-12 mb-4">
+              <div class="card environment-card enviro-card">
+                <div class="card-body">
+                  <h2 class="poppins-bold mb-4">Faktor Lingkungan</h2>
+                  <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-2">
+                      <h5>
+                        <i class="fas fa-water"></i>
+                        <strong>Kelembaban Tanah</strong>
+                      </h5>
+                      <p class="status-good poppins-bold">70%</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-2">
+                      <h5>
+                        <i class="fas fa-cloud"></i>
+                        <strong>Kelembaban Udara</strong>
+                      </h5>
+                      <p class="status-good poppins-bold">60%</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-2">
+                      <h5>
+                        <i class="fas fa-cloud-showers-heavy"></i>
+                        <strong>Curah Hujan</strong>
+                      </h5>
+                      <p class="status-low poppins-bold">1300 mm</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-2">
+                      <h5>
+                        <i class="fas fa-wind"></i>
+                        <strong>Kecepatan Angin</strong>
+                      </h5>
+                      <p class="status-low poppins-bold">16 km/h</p>
+                    </div>
+                    <div class="col-6 col-md-3 my-2">
+                      <h5>
+                        <i class="fas fa-temperature-low"></i>
+                        <strong>Suhu Udara</strong>
+                      </h5>
+                      <p class="status-good poppins-bold">20&deg;C</p>
+                    </div>
+                    <div class="col-6 col-md-3 my-2">
+                      <h5>
+                        <i class="fas fa-seedling"></i>
+                        <strong>pH Tanah</strong>
+                      </h5>
+                      <p class="status-moderate poppins-bold">6.0</p>
+                    </div>
+                    <div class="col-6 col-md-3 my-2">
+                      <h5>
+                        <i class="fas fa-water"></i>
+                        <strong>Drainase Tanah</strong>
+                      </h5>
+                      <p class="status-good poppins-bold">Baik</p>
+                    </div>
+                    <div class="col-6 col-md-3 my-2">
+                      <h5>
+                        <i class="fas fa-leaf"></i>
+                        <strong>Kandungan Nitrogen</strong>
+                      </h5>
+                      <p class="status-moderate poppins-bold">3.5%</p>
+                    </div>
+                    <div class="col-6 col-md-3 my-2">
+                      <h5>
+                        <i class="fas fa-sun"></i>
+                        <strong>Intensitas Cahaya</strong>
+                      </h5>
+                      <p class="status-good poppins-bold">1200 lux</p>
                     </div>
                   </div>
                 </div>
