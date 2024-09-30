@@ -1,171 +1,171 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AgriHub - Dashboard</title>
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <!-- Google Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/65ec807597.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/65ec807597.js" crossorigin="anonymous"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/fonts.css" />
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" id="logo" alt="Logo" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dashboard.html">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="plant-guide.html">Plant Guide</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" id="logo" alt="Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="plant-guide.html">Plant Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Breadcrumb -->
     <div class="breadcrumb-container">
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Category</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Subcategory</li>
-          </ol>
-      </nav>
-  </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Category</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Subcategory</li>
+            </ol>
+        </nav>
+    </div>
 
     <div class="container py-5 mt-5">
-      <!-- Dashboard Content -->
-      <div class="row">
-        <h2 class="poppins-bold">Kondisi Tanamanmu Saat Ini</h2>
-
-        <!-- Stats Cards -->
+        <!-- Dashboard Content -->
         <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>25°C</h3>
-              <p>Suhu Saat Ini</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>60%</h3>
-              <p>Kelembaban Tanah</p>
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="card-stat">
-              <h3>70%</h3>
-              <p>Kelembaban Udara</p>
-            </div>
-          </div>
-        </div>
+            <h2 class="poppins-bold">Kondisi Tanamanmu Saat Ini</h2>
 
-        <!-- Charts -->
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="chart">
-              <h4>Perubahan Suhu</h4>
-              <canvas id="tempChart"></canvas>
+            <!-- Stats Cards -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card-stat">
+                        <h3>25°C</h3>
+                        <p>Suhu Saat Ini</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-stat">
+                        <h3>60%</h3>
+                        <p>Kelembaban Tanah</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card-stat">
+                        <h3>70%</h3>
+                        <p>Kelembaban Udara</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6 mb-4">
-            <div class="chart">
-              <h4>Kelembaban Tanah</h4>
-              <canvas id="soilMoistureChart"></canvas>
+
+            <!-- Charts -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="chart">
+                        <h4>Perubahan Suhu</h4>
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="chart">
+                        <h4>Kelembaban Tanah</h4>
+                        <canvas id="soilMoistureChart"></canvas>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <!-- Environmental Monitoring -->
-          <div class="col-md-6 mb-4">
-            <h5>CO2 Levels</h5>
-            <canvas id="co2Chart"></canvas>
-          </div>
-          <div class="col-md-6 mb-4">
-            <h5>Intensitas Cahaya</h5>
-            <canvas id="lightIntensityChart"></canvas>
-          </div>
-        </div>
+            <div class="row">
+                <!-- Environmental Monitoring -->
+                <div class="col-md-6 mb-4">
+                    <h5>CO2 Levels</h5>
+                    <canvas id="co2Chart"></canvas>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Intensitas Cahaya</h5>
+                    <canvas id="lightIntensityChart"></canvas>
+                </div>
+            </div>
 
-        <!-- Alerts and Notifications -->
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <h5>Peringatan & Notifikasi</h5>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <i class="fas fa-thermometer-half text-danger"></i> Suhu tinggi
-                terdeteksi.
-              </li>
-              <li class="list-group-item">
-                <i class="fas fa-tint text-info"></i> Kelembaban tanah rendah.
-              </li>
-            </ul>
-          </div>
-        </div>
+            <!-- Alerts and Notifications -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>Peringatan & Notifikasi</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <i class="fas fa-thermometer-half text-danger"></i> Suhu tinggi terdeteksi.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-tint text-info"></i> Kelembaban tanah rendah.
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <a href="plant-guide.html" class="btn btn-info mt-4"
-          >Panduan Penanaman</a
-        >
-      </div>
+            <!-- Input for Harvest Prediction -->
+            <div class="col-md-12 mb-4">
+                <h2>Prediksi Hasil Panen</h2>
+                <div class="form-group">
+                    <label for="suhuInput">Suhu (°C):</label>
+                    <input type="number" id="suhuInput" class="form-control" value="25" required>
+                </div>
+                <div class="form-group">
+                    <label for="kelembabanTanahInput">Kelembaban Tanah (%):</label>
+                    <input type="number" id="kelembabanTanahInput" class="form-control" value="60" required>
+                </div>
+                <div class="form-group">
+                    <label for="kelembabanUdaraInput">Kelembaban Udara (%):</label>
+                    <input type="number" id="kelembabanUdaraInput" class="form-control" value="70" required>
+                </div>
+                <div class="form-group">
+                    <label for="waktuTanamInput">Waktu Tanam (minggu):</label>
+                    <input type="number" id="waktuTanamInput" class="form-control" required>
+                </div>
+                <button class="btn btn-success mt-3" id="prediksiHasilPanenBtn">Prediksi Hasil Panen</button>
+
+                <!-- Result Display -->
+                <div class="mt-4" id="prediksiResult" style="display: none;">
+                    <h4>Hasil Prediksi:</h4>
+                    <p id="prediksiText"></p>
+                </div>
+            </div>
+
+            <a href="plant-guide.html" class="btn btn-info mt-4">Panduan Penanaman</a>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="bg-light text-center py-3 mt-5">
-      &copy; 2024 Smart Agriculture. All rights reserved.
+        &copy; 2024 Smart Agriculture. All rights reserved.
     </footer>
 
     <!-- Bootstrap JS -->
@@ -175,115 +175,124 @@
 
     <!-- Chart.js Initialization -->
     <script>
-      const tempCtx = document.getElementById("tempChart").getContext("2d");
-      const tempChart = new Chart(tempCtx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-          datasets: [
-            {
-              label: "Suhu (°C)",
-              data: [20, 22, 23, 25, 26, 28],
-              borderColor: "#FF5733",
-              backgroundColor: "rgba(255, 87, 51, 0.2)",
-              fill: true,
-              tension: 0.4,
+        const tempCtx = document.getElementById("tempChart").getContext("2d");
+        const tempChart = new Chart(tempCtx, {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                datasets: [
+                    {
+                        label: "Suhu (°C)",
+                        data: [20, 22, 23, 25, 26, 28],
+                        borderColor: "#FF5733",
+                        backgroundColor: "rgba(255, 87, 51, 0.2)",
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
             },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 35,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 35,
+                    },
+                },
             },
-          },
-        },
-      });
+        });
 
-      const soilCtx = document
-        .getElementById("soilMoistureChart")
-        .getContext("2d");
-      const soilMoistureChart = new Chart(soilCtx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-          datasets: [
-            {
-              label: "Kelembaban Tanah (%)",
-              data: [60, 55, 58, 63, 62, 60],
-              borderColor: "#28A745",
-              backgroundColor: "rgba(40, 167, 69, 0.2)",
-              fill: true,
-              tension: 0.4,
+        const soilCtx = document.getElementById("soilMoistureChart").getContext("2d");
+        const soilMoistureChart = new Chart(soilCtx, {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                datasets: [
+                    {
+                        label: "Kelembaban Tanah (%)",
+                        data: [60, 55, 58, 63, 62, 60],
+                        borderColor: "#28A745",
+                        backgroundColor: "rgba(40, 167, 69, 0.2)",
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
             },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 100,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                    },
+                },
             },
-          },
-        },
-      });
+        });
 
-      const co2Ctx = document.getElementById("co2Chart").getContext("2d");
-      const co2Chart = new Chart(co2Ctx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-          datasets: [
-            {
-              label: "CO2 Levels (ppm)",
-              data: [400, 420, 430, 410, 415, 405],
-              borderColor: "#FFC300",
-              backgroundColor: "rgba(255, 195, 0, 0.2)",
-              fill: true,
-              tension: 0.4,
+        const co2Ctx = document.getElementById("co2Chart").getContext("2d");
+        const co2Chart = new Chart(co2Ctx, {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                datasets: [
+                    {
+                        label: "CO2 Levels (ppm)",
+                        data: [400, 420, 430, 410, 415, 405],
+                        borderColor: "#FFC300",
+                        backgroundColor: "rgba(255, 195, 0, 0.2)",
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
             },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: false,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                    },
+                },
             },
-          },
-        },
-      });
+        });
 
-      const lightCtx = document
-        .getElementById("lightIntensityChart")
-        .getContext("2d");
-      const lightIntensityChart = new Chart(lightCtx, {
-        type: "line",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
-          datasets: [
-            {
-              label: "Intensitas Cahaya (lux)",
-              data: [300, 320, 290, 310, 305, 315],
-              borderColor: "#17A2B8",
-              backgroundColor: "rgba(23, 162, 184, 0.2)",
-              fill: true,
-              tension: 0.4,
+        const lightCtx = document.getElementById("lightIntensityChart").getContext("2d");
+        const lightIntensityChart = new Chart(lightCtx, {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun"],
+                datasets: [
+                    {
+                        label: "Intensitas Cahaya (lux)",
+                        data: [300, 320, 290, 310, 305, 315],
+                        borderColor: "#17A2B8",
+                        backgroundColor: "rgba(23, 162, 184, 0.2)",
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
             },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: true,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
             },
-          },
-        },
-      });
+        });
+
+        // Harvest Prediction Function
+        document.getElementById("prediksiHasilPanenBtn").addEventListener("click", function () {
+            const suhu = parseFloat(document.getElementById("suhuInput").value);
+            const kelembabanTanah = parseFloat(document.getElementById("kelembabanTanahInput").value);
+            const kelembabanUdara = parseFloat(document.getElementById("kelembabanUdaraInput").value);
+            const waktuTanam = parseInt(document.getElementById("waktuTanamInput").value);
+
+            // Simple prediction logic (you can replace this with your actual model)
+            const hasilPrediksi = (suhu * 0.3) + (kelembabanTanah * 0.5) + (kelembabanUdara * 0.2) + (waktuTanam * 10);
+            document.getElementById("prediksiText").innerText = `Hasil prediksi panen adalah: ${hasilPrediksi.toFixed(2)} kg per hektar.`;
+            document.getElementById("prediksiResult").style.display = "block";
+        });
     </script>
-  </body>
+</body>
 </html>

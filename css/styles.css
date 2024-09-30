@@ -233,3 +233,13 @@ footer {
     padding: 10px;
     border-radius: 20px;
 }
+
+.expanded-card {
+    max-width: 100%; /* Memperluas kartu ke lebar penuh */
+    overflow: hidden; /* Menyembunyikan konten yang tidak sesuai dengan ukuran kartu */
+    margin-top: 20px;
+}
+
+.plant-card:hover {
+    transform: scale(1.05); /* Menambahkan efek hover pada kartu */
+}
