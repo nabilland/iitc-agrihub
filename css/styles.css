@@ -270,111 +270,111 @@ footer {
 #title-resources {
     font-weight: 700;
     animation: fadeInDown 1.2s ease-in-out;
-  }
+}
 
-  #footer-resources {
+#footer-resources {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 20px;
-  }
+}
 
 .btn-outline-primary, .btn-outline-success {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+}
 
-  .btn-outline-primary:hover, .btn-outline-success:hover {
+.btn-outline-primary:hover, .btn-outline-success:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
+}
 
-  #manualForm, #iotResult, #manualResult {
+#manualForm, #iotResult, #manualResult {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease;
-  }
+}
 
-  #manualForm:hover, #iotResult:hover, #manualResult:hover {
+#manualForm:hover, #iotResult:hover, #manualResult:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .list-group-item {
+.list-group-item {
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
+}
 
-  .list-group-item:hover {
+.list-group-item:hover {
     background-color: #f1f1f1;
-  }
+}
 
-  #setNotificationManual, #setNotificationIoT {
+#setNotificationManual, #setNotificationIoT {
     transition: background-color 0.4s ease, transform 0.4s ease;
-  }
+}
 
-  #setNotificationManual:hover, #setNotificationIoT:hover {
+#setNotificationManual:hover, #setNotificationIoT:hover {
     background-color: #ffc107;
     transform: translateY(-3px);
-  }
+}
 
-  .modal-content {
+.modal-content {
     animation: zoomIn 0.4s ease-in-out;
-  }
+}
 
-  @keyframes fadeInDown {
+@keyframes fadeInDown {
     from {
-      opacity: 0;
-      transform: translateY(-20px);
+        opacity: 0;
+        transform: translateY(-20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
-  @keyframes fadeInUp {
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
-  @keyframes zoomIn {
+@keyframes zoomIn {
     from {
-      opacity: 0;
-      transform: scale(0.9);
+        opacity: 0;
+        transform: scale(0.9);
     }
     to {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
+}
 
-  .alert {
+.alert {
     transition: all 0.3s ease-in-out;
-  }
+}
 
-  .alert.show {
+.alert.show {
     animation: fadeIn 0.6s ease-out;
-  }
+}
 
-  @keyframes fadeIn {
+@keyframes fadeIn {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
+}
 
   /* styles of recommendation page */
-  #body-recommendation {
+#body-recommendation {
     background: url('../images/green-leaves-background.jpg') no-repeat center center fixed;
     background-size: cover; /* Menyesuaikan ukuran gambar */
     font-family: 'Poppins', sans-serif; /* Mengatur font */
@@ -382,67 +382,126 @@ footer {
 }
 
 
-  #title-recommendation {
+#title-recommendation {
     font-weight: 700;
     animation: fadeInDown 1.2s ease-in-out;
-  }
+}
 
-  .overlay {
+.overlay {
     background: rgba(255, 255, 255, 0.85); /* Transparansi pada area konten */
     padding: 30px 15px; /* Padding area konten */
-  }
+}
 
-  .fade-in {
+.fade-in {
     background: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease-in-out, opacity 1s;
-  }
+}
 
-  .fade-in:hover {
+.fade-in:hover {
     transform: translateY(-5px);
-  }
+}
 
-  #getRecommendation {
+#getRecommendation {
     background-color: #198754;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
+}
 
-  #getRecommendation:hover {
+#getRecommendation:hover {
     background-color: #145c3e;
     transform: translateY(-2px);
-  }
+}
 
-  #resultSection .alert {
+#resultSection .alert {
     background-color: #198754;
     color: white;
     transition: transform 0.5s, opacity 0.5s ease-in-out;
-  }
+}
 
-  #resultSection .alert-heading {
+#resultSection .alert-heading {
     font-size: 24px;
-  }
+}
 
-  #resultSection.show {
+#resultSection.show {
     transform: translateY(0);
     opacity: 1;
-  }
+}
 
-  #resultSection.hidden {
+#resultSection.hidden {
     transform: translateY(20px);
     opacity: 0;
-  }
+}
 
-  .form-label {
+.form-label {
     font-weight: bold;
-  }
+}
 
-  /* Footer */
-  #footer-recommendation {
+/* Footer */
+#footer-recommendation {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 20px;
-  }
+}
+
+.login {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.register-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-card .btn-primary {
+    width: 100%;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.register-card .btn-primary:hover {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.register-card .form-control {
+    border-radius: 30px;
+    padding: 0.75rem 1.25rem;
+}
+
+.register-card .form-group {
+    margin-bottom: 1rem;
+}
+
+.register-card p {
+    text-align: center;
+}
+
+.register-card p a {
+    text-decoration: none;
+    color: #198754;
+    font-weight: bold;
+}
+
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
