@@ -11,118 +11,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <style>
-    /* Custom Styles for Resource Management */
-    body, h2, p, button, .list-group-item {
-      font-family: 'Poppins', sans-serif;
-    }
 
-    .container h2 {
-      font-weight: 700;
-      animation: fadeInDown 1.2s ease-in-out;
-    }
-    
-    .btn-outline-primary, .btn-outline-success {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-outline-primary:hover, .btn-outline-success:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    #manualForm, #iotResult, #manualResult {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.4s ease;
-    }
-
-    #manualForm:hover, #iotResult:hover, #manualResult:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .list-group-item {
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .list-group-item:hover {
-      background-color: #f1f1f1;
-    }
-
-    #setNotificationManual, #setNotificationIoT {
-      transition: background-color 0.4s ease, transform 0.4s ease;
-    }
-
-    #setNotificationManual:hover, #setNotificationIoT:hover {
-      background-color: #ffc107;
-      transform: translateY(-3px);
-    }
-
-    .modal-content {
-      animation: zoomIn 0.4s ease-in-out;
-    }
-
-    .footer {
-      background: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      padding: 20px;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .alert {
-      transition: all 0.3s ease-in-out;
-    }
-
-    .alert.show {
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -145,7 +34,7 @@
 
   <!-- Resource Management Content -->
   <div class="container mt-5 pt-5">
-    <h2 class="text-success text-center">Manajemen Sumber Daya</h2>
+    <h2 id="title-resources" class="text-success text-center">Manajemen Sumber Daya</h2>
     <p class="text-center">Pilih metode pengaturan sumber daya untuk pertanian Anda:</p>
 
     <!-- Input Manual -->
@@ -187,18 +76,18 @@
 
     <!-- Manual Input Form -->
     <div id="manualForm" class="mt-4" style="display: none;">
-      <h4><strong>Input Manual</strong></h4>
+      <h4><strong>Input Data</strong></h4>
       <form>
         <div class="mb-3">
-          <label for="waterUsage" class="form-label">Penggunaan Air (Liter)</label>
+          <label for="waterUsage" class="form-label-res">Penggunaan Air (Liter)</label>
           <input type="number" class="form-control" id="waterUsage" placeholder="Contoh: 500" required />
         </div>
         <div class="mb-3">
-          <label for="fertilizerUsage" class="form-label">Penggunaan Pupuk (Kg)</label>
+          <label for="fertilizerUsage" class="form-label-res">Penggunaan Pupuk (Kg)</label>
           <input type="number" class="form-control" id="fertilizerUsage" placeholder="Contoh: 50" required />
         </div>
         <div class="mb-3">
-          <label for="energyUsage" class="form-label">Penggunaan Energi (KWh)</label>
+          <label for="energyUsage" class="form-label-res">Penggunaan Energi (KWh)</label>
           <input type="number" class="form-control" id="energyUsage" placeholder="Contoh: 30" required />
         </div>
         <button type="button" id="saveBtn" class="btn btn-success">Simpan Data</button>
@@ -218,7 +107,7 @@
 
     <!-- IoT Data Result -->
     <div id="iotResult" class="mt-4" style="display: none;">
-      <h4 class="text-success">Hasil Integrasi dengan IoT</h4>
+      <h4 class="text-success"><strong>Hasil Integrasi dengan IoT</strong></h4>
       <p>Berikut adalah data penggunaan sumber daya yang didapatkan dari sensor IoT:</p>
       <ul class="list-group">
         <li class="list-group-item">Penggunaan Air: 600 Liter</li>
@@ -232,22 +121,24 @@
   <!-- Modal for Setting Notification -->
   <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="notificationModalLabel">Atur Notifikasi Waktu Penggunaan</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Atur Notifikasi Waktu Penggunaan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="alertContainer"></div> <!-- Tempat untuk alert -->
+                <label for="notificationTime">Jam Notifikasi:</label>
+                <input type="time" id="notificationTime" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="setNotification">Setel Notifikasi</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <label for="notificationTime">Jam Notifikasi:</label>
-          <input type="time" id="notificationTime" class="form-control" required>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="setNotification">Setel Notifikasi</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
+
+
 
 <!-- Modal untuk Notifikasi Penggunaan Sumber Daya -->
 <div class="modal fade" id="resourceNotificationModal" tabindex="-1" aria-labelledby="resourceNotificationModalLabel" aria-hidden="true">
@@ -268,7 +159,7 @@
 </div>
 
 <!-- Modal for validation message -->
-<div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
+<div class="modal fade" id="validationModalResources" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -284,9 +175,10 @@
     </div>
   </div>
 </div>
+
   
   <!-- Footer -->
-  <footer class="footer text-center py-3">
+  <footer id="footer-resources" class="footer text-center py-3">
     &copy; 2024 <strong>AgriHub</strong>. All rights reserved.
   </footer>
   
@@ -312,7 +204,7 @@
   
         // Cek apakah semua field sudah diisi
         if (water === "" || fertilizer === "" || energy === "") {
-          $('#validationModal').modal('show'); // Tampilkan modal validasi jika field kosong
+          $('#validationModalResources').modal('show'); // Tampilkan modal validasi jika field kosong
         } else {
           // Jika semua field terisi, tampilkan hasil
           $('#waterData').text(water);
@@ -343,9 +235,16 @@
           $('#notificationModal').modal('hide'); // Tutup modal setelah mengatur notifikasi
           $('#alertTime').text(notificationTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })); // Set waktu pada alert
           $('#alertNotification').fadeIn(); // Tampilkan alert sukses
-        } else {
-          alert('Waktu sudah lewat, silakan atur waktu yang benar.');
-        }
+        }  else {
+        // Menampilkan alert jika waktu sudah lewat
+        $('#alertContainer').append(`
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Waktu sudah lewat!</strong> Silakan atur waktu yang benar.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+            </div>
+        `);
+    }
       });
   
       // Show the modal for setting notification for manual input

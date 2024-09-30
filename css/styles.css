@@ -184,14 +184,22 @@ footer {
 
 .breadcrumb-container {
     display: flex;
-    align-items: center; /* Menyelaraskan secara vertikal */
-    margin-top: 90px; /* Sesuaikan nilai ini dengan tinggi navbar */
+    align-items: center;
 }
 
 .breadcrumb {
-    background-color: #a4e3f7;
-    flex-grow: 1; /* Mengizinkan breadcrumb untuk mengambil sisa ruang */
-    padding: 10px 20px; /* Padding untuk breadcrumb */
+    background-color: white;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px 0px;
+}
+
+.breadcrumb-item a {
+    color: #fd1c1c;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
 }
 
 .counter {
@@ -204,6 +212,11 @@ footer {
     height: auto;
     padding: 10px;
     margin-left: 50px;
+}
+
+.qna .container {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .qna-block-1 {
@@ -234,12 +247,325 @@ footer {
     border-radius: 20px;
 }
 
-.expanded-card {
-    max-width: 100%; /* Memperluas kartu ke lebar penuh */
-    overflow: hidden; /* Menyembunyikan konten yang tidak sesuai dengan ukuran kartu */
-    margin-top: 20px;
+
+.glow-button {
+    position: relative;
+    border: none;
+    color: #28a745;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: 0.5s;
+    background-color: transparent;
+    box-shadow: 0 0 5px #28a745, 0 0 25px #28a745, 0 0 50px #28a745, 0 0 100px #28a745;
 }
 
-.plant-card:hover {
-    transform: scale(1.05); /* Menambahkan efek hover pada kartu */
+.glow-button:hover {
+    color: white;
+    background-color: #28a745;
+    box-shadow: 0 0 20px #28a745, 0 0 40px #28a745, 0 0 80px #28a745;
+}
+
+/* styles of resources page */
+#title-resources {
+    font-weight: 700;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+#footer-resources {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+}
+
+.btn-outline-primary, .btn-outline-success {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-primary:hover, .btn-outline-success:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#manualForm, #iotResult, #manualResult {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+#manualForm:hover, #iotResult:hover, #manualResult:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+#setNotificationManual, #setNotificationIoT {
+    transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+#setNotificationManual:hover, #setNotificationIoT:hover {
+    background-color: #ffc107;
+    transform: translateY(-3px);
+}
+
+.modal-content {
+    animation: zoomIn 0.4s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.alert {
+    transition: all 0.3s ease-in-out;
+}
+
+.alert.show {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+  /* styles of recommendation page */
+#body-recommendation {
+    background: url('../images/green-leaves-background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Menyesuaikan ukuran gambar */
+    font-family: 'Poppins', sans-serif; /* Mengatur font */
+    padding-top: 70px; /* Sesuaikan padding top sesuai tinggi navbar */
+}
+
+
+#title-recommendation {
+    font-weight: 700;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.85); /* Transparansi pada area konten */
+    padding: 30px 15px; /* Padding area konten */
+}
+
+.fade-in {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 1s;
+}
+
+.fade-in:hover {
+    transform: translateY(-5px);
+}
+
+#getRecommendation {
+    background-color: #198754;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#getRecommendation:hover {
+    background-color: #145c3e;
+    transform: translateY(-2px);
+}
+
+#resultSection .alert {
+    background-color: #198754;
+    color: white;
+    transition: transform 0.5s, opacity 0.5s ease-in-out;
+}
+
+#resultSection .alert-heading {
+    font-size: 24px;
+}
+
+#resultSection.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#resultSection.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+/* Footer */
+#footer-recommendation {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+}
+
+.login {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.register-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-card .btn-primary {
+    width: 100%;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.register-card .btn-primary:hover {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.register-card .form-control {
+    border-radius: 30px;
+    padding: 0.75rem 1.25rem;
+}
+
+.register-card .form-group {
+    margin-bottom: 1rem;
+}
+
+.register-card p {
+    text-align: center;
+}
+
+.register-card p a {
+    text-decoration: none;
+    color: #198754;
+    font-weight: bold;
+}
+
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.weather-card {
+    background-color: #ffe5b4; /* Change to your preferred color */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.status-good {
+    color: green;
+}
+
+.status-low {
+    color: red;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none !important;
+}
+
+
+/* Custom styling for the sidebar */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    background: #f8f9fa;
+    padding-top: 20px;
+    transition: all 0.3s;
+}
+
+#sidebar ul.components {
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#sidebar ul li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+#sidebar ul li a:hover {
+    color: #198754;
+    font-weight: bolder;
+}
+
+#content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+>>>>>>> 3279b372b4bbf08d7ab3d975bc33eed784060207
 }

@@ -20,156 +20,113 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/fonts.css" />
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="d-flex">
+      <nav id="sidebar" class="bg-light sidebar">
+        <div class="p-4">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" id="logo" alt="Logo" class="img-fluid" />
+          </a>
+          <ul class="list-unstyled components mt-4">
+            <li>
+              <a href="profile.html">Profil Saya</a>
+            </li>
+            <li>
+              <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="plant-guide.html">Plant Guide</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact Us</a>
+            </li>
+            <li>
+              <a href="home.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content" class="p-4">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.png" id="logo" alt="Logo" />
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.html">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="plant-guide.html">Plant Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          <div class="row">
+            <h3 class="title poppins-bold pt-5">Halo, Malika</h3>
+            <h2 class="poppins-bold mb-5">Mari pantau kondisi tanamanmu!</h2>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Category</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Subcategory</li>
-            </ol>
-        </nav>
+            <div class="container mb-4">
+              <h5 class="form-label">Pilih Lokasi Lahan:</h5>
+              <div class="row">
+                <div class="col-md-4">
+                  <a href="dashboard-lahan.html">
+                    <div class="card lahan-card" id="lahan1">
+                      <img
+                        src="images/kebun-selada.png"
+                        class="card-img-top"
+                        alt="Perkebunan Agro Mulyo"
+                        width="50"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Perkebunan Agro Mulyo</h5>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <div class="card lahan-card" id="lahan2">
+                    <img
+                      src="images/kebun-tomat.png"
+                      class="card-img-top"
+                      alt="Perkebunan Bukit Asri"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Perkebunan Bukit Asri</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card lahan-card" id="lahan3">
+                    <img
+                      src="images/kebun-wortel.png"
+                      class="card-img-top"
+                      alt="Perkebunan Citra Nusantara"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Perkebunan Citra Nusantara</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-light text-center py-3 mt-5">
+          &copy; 2024 Smart Agriculture. All rights reserved.
+        </footer>
+      </div>
     </div>
 
-    <div class="container py-5 mt-5">
-        <!-- Dashboard Content -->
-        <div class="row">
-            <h2 class="poppins-bold">Kondisi Tanamanmu Saat Ini</h2>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-            <!-- Stats Cards -->
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card-stat">
-                        <h3>25°C</h3>
-                        <p>Suhu Saat Ini</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card-stat">
-                        <h3>60%</h3>
-                        <p>Kelembaban Tanah</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card-stat">
-                        <h3>70%</h3>
-                        <p>Kelembaban Udara</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-            <!-- Charts -->
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="chart">
-                        <h4>Perubahan Suhu</h4>
-                        <canvas id="tempChart"></canvas>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="chart">
-                        <h4>Kelembaban Tanah</h4>
-                        <canvas id="soilMoistureChart"></canvas>
-                    </div>
-                </div>
-            </div>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
-            <div class="row">
-                <!-- Environmental Monitoring -->
-                <div class="col-md-6 mb-4">
-                    <h5>CO2 Levels</h5>
-                    <canvas id="co2Chart"></canvas>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h5>Intensitas Cahaya</h5>
-                    <canvas id="lightIntensityChart"></canvas>
-                </div>
-            </div>
-
-            <!-- Alerts and Notifications -->
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h5>Peringatan & Notifikasi</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <i class="fas fa-thermometer-half text-danger"></i> Suhu tinggi terdeteksi.
-                        </li>
-                        <li class="list-group-item">
-                            <i class="fas fa-tint text-info"></i> Kelembaban tanah rendah.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Input for Harvest Prediction -->
-            <div class="col-md-12 mb-4">
-                <h2>Prediksi Hasil Panen</h2>
-                <div class="form-group">
-                    <label for="suhuInput">Suhu (°C):</label>
-                    <input type="number" id="suhuInput" class="form-control" value="25" required>
-                </div>
-                <div class="form-group">
-                    <label for="kelembabanTanahInput">Kelembaban Tanah (%):</label>
-                    <input type="number" id="kelembabanTanahInput" class="form-control" value="60" required>
-                </div>
-                <div class="form-group">
-                    <label for="kelembabanUdaraInput">Kelembaban Udara (%):</label>
-                    <input type="number" id="kelembabanUdaraInput" class="form-control" value="70" required>
-                </div>
-                <div class="form-group">
-                    <label for="waktuTanamInput">Waktu Tanam (minggu):</label>
-                    <input type="number" id="waktuTanamInput" class="form-control" required>
-                </div>
-                <button class="btn btn-success mt-3" id="prediksiHasilPanenBtn">Prediksi Hasil Panen</button>
-
-                <!-- Result Display -->
-                <div class="mt-4" id="prediksiResult" style="display: none;">
-                    <h4>Hasil Prediksi:</h4>
-                    <p id="prediksiText"></p>
-                </div>
-            </div>
-
-            <a href="plant-guide.html" class="btn btn-info mt-4">Panduan Penanaman</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-light text-center py-3 mt-5">
-        &copy; 2024 Smart Agriculture. All rights reserved.
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
